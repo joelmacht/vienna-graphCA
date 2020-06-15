@@ -1,0 +1,4064 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wfs:WFS_Capabilities version="1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.opengis.net/wfs" xmlns:wfs="http://www.opengis.net/wfs" xmlns:ows="http://www.opengis.net/ows" xmlns:gml="http://www.opengis.net/gml" xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.opengis.net/wfs http://schemas.opengis.net/wfs/1.1.0/wfs.xsd" xmlns:ogdwien="http://www.wien.gv.at/ogdwien" updateSequence="9263">
+  <ows:ServiceIdentification>
+    <ows:Title>Open Government Data WFS Wien</ows:Title>
+    <ows:Abstract>This service provides access to online vector data of the City of Vienna, Austria.</ows:Abstract>
+    <ows:Keywords>
+      <ows:Keyword>WFS</ows:Keyword>
+      <ows:Keyword>Wien</ows:Keyword>
+      <ows:Keyword>Vienna</ows:Keyword>
+      <ows:Keyword>vector</ows:Keyword>
+      <ows:Keyword>government</ows:Keyword>
+      <ows:Keyword>data</ows:Keyword>
+    </ows:Keywords>
+    <ows:ServiceType>WFS</ows:ServiceType>
+    <ows:ServiceTypeVersion>1.1.0</ows:ServiceTypeVersion>
+    <ows:Fees>http://creativecommons.org/licenses/by/3.0/at/deed.de</ows:Fees>
+    <ows:AccessConstraints>http://data.wien.gv.at/nutzungsbedingungen</ows:AccessConstraints>
+  </ows:ServiceIdentification>
+  <ows:ServiceProvider>
+    <ows:ProviderName />
+    <ows:ServiceContact>
+      <ows:IndividualName />
+      <ows:PositionName />
+      <ows:ContactInfo>
+        <ows:Phone>
+          <ows:Voice />
+          <ows:Facsimile />
+        </ows:Phone>
+        <ows:Address>
+          <ows:DeliveryPoint />
+          <ows:City />
+          <ows:AdministrativeArea />
+          <ows:PostalCode />
+          <ows:Country />
+          <ows:ElectronicMailAddress />
+        </ows:Address>
+      </ows:ContactInfo>
+    </ows:ServiceContact>
+  </ows:ServiceProvider>
+  <ows:OperationsMetadata>
+    <ows:Operation name="GetCapabilities">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:href="http://data.wien.gv.at/daten/geo" />
+          <ows:Post xlink:href="http://data.wien.gv.at/daten/geo" />
+        </ows:HTTP>
+      </ows:DCP>
+      <ows:Parameter name="AcceptVersions">
+        <ows:Value>1.0.0</ows:Value>
+        <ows:Value>1.1.0</ows:Value>
+      </ows:Parameter>
+      <ows:Parameter name="AcceptFormats">
+        <ows:Value>text/xml</ows:Value>
+      </ows:Parameter>
+    </ows:Operation>
+    <ows:Operation name="DescribeFeatureType">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:href="http://data.wien.gv.at/daten/geo" />
+          <ows:Post xlink:href="http://data.wien.gv.at/daten/geo" />
+        </ows:HTTP>
+      </ows:DCP>
+      <ows:Parameter name="outputFormat">
+        <ows:Value>text/xml; subtype=gml/3.1.1</ows:Value>
+      </ows:Parameter>
+    </ows:Operation>
+    <ows:Operation name="GetFeature">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:href="http://data.wien.gv.at/daten/geo" />
+          <ows:Post xlink:href="http://data.wien.gv.at/daten/geo" />
+        </ows:HTTP>
+      </ows:DCP>
+      <ows:Parameter name="resultType">
+        <ows:Value>results</ows:Value>
+        <ows:Value>hits</ows:Value>
+      </ows:Parameter>
+      <ows:Parameter name="outputFormat">
+        <ows:Value>text/xml; subtype=gml/3.1.1</ows:Value>
+        <ows:Value>ARML</ows:Value>
+        <ows:Value>GML2</ows:Value>
+        <ows:Value>KML</ows:Value>
+        <ows:Value>SHAPE-ZIP</ows:Value>
+        <ows:Value>application/gml+xml; version=3.2</ows:Value>
+        <ows:Value>application/json</ows:Value>
+        <ows:Value>application/rss+xml</ows:Value>
+        <ows:Value>application/vnd.google-earth.kml xml</ows:Value>
+        <ows:Value>application/vnd.google-earth.kml+xml</ows:Value>
+        <ows:Value>csv</ows:Value>
+        <ows:Value>gml3</ows:Value>
+        <ows:Value>gml32</ows:Value>
+        <ows:Value>json</ows:Value>
+        <ows:Value>text/javascript</ows:Value>
+        <ows:Value>text/xml; subtype=gml/2.1.2</ows:Value>
+        <ows:Value>text/xml; subtype=gml/3.2</ows:Value>
+      </ows:Parameter>
+      <ows:Constraint name="LocalTraverseXLinkScope">
+        <ows:Value>2</ows:Value>
+      </ows:Constraint>
+    </ows:Operation>
+    <ows:Operation name="GetGmlObject">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:href="http://data.wien.gv.at/daten/geo" />
+          <ows:Post xlink:href="http://data.wien.gv.at/daten/geo" />
+        </ows:HTTP>
+      </ows:DCP>
+    </ows:Operation>
+  </ows:OperationsMetadata>
+  <FeatureTypeList>
+    <Operations>
+      <Operation>Query</Operation>
+    </Operations>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:ABWARMEPOTOGD</Name>
+      <Title>Abwärmekarte</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>Phase 30</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.2133031890883 48.128277365461194</ows:LowerCorner>
+        <ows:UpperCorner>16.498417582697183 48.28881917402753</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:ADRESSENOGD</Name>
+      <Title>Adressen</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_GEBADR_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.18416586681217 48.121743013868155</ows:LowerCorner>
+        <ows:UpperCorner>16.549956536179685 48.31938214502996</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:ALTSTOFFSAMMLUNGOGD</Name>
+      <Title>Altstoffsammelstelle</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.194 48.124</ows:LowerCorner>
+        <ows:UpperCorner>16.546 48.304</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:AMBULANZOGD</Name>
+      <Title>Ambulanzen</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.279 48.169</ows:LowerCorner>
+        <ows:UpperCorner>16.464 48.254</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:AKUSTISCHEAMPELOGD</Name>
+      <Title>Ampeln mit Akustikkennung</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.212 48.126</ows:LowerCorner>
+        <ows:UpperCorner>16.526 48.299</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:AMPELOGD</Name>
+      <Title>Ampeln ohne Akustikkennung</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_VLSOHNEBLAK_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.21703742407842 48.12411610913404</ows:LowerCorner>
+        <ows:UpperCorner>16.530032648666886 48.301227516155315</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:PARKENANRAINEROGD</Name>
+      <Title>Anrainerparkplätze</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_VERKEHR_ANRAINERP_L</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.338925252114798 48.19071238935715</ows:LowerCorner>
+        <ows:UpperCorner>16.355892756034244 48.21338885405635</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:ARCHAEOSDLGOGD</Name>
+      <Title>Antike Siedlungsbereiche</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_ARCHAEO_SIEDLUNGEN_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.325649237798782 48.13058152425363</ows:LowerCorner>
+        <ows:UpperCorner>16.42253079105418 48.22045389760354</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:APOTHEKEOGD</Name>
+      <Title>Apotheken</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_APOTHEKE_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.217975226951445 48.12625836975366</ows:LowerCorner>
+        <ows:UpperCorner>16.524649203758315 48.29704503965462</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:FUNDPUNKTEOGD</Name>
+      <Title>Archäologische Fundpunkte</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_ARCHAEO_FUNDPKT_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.182293185204088 48.12415026661593</ows:LowerCorner>
+        <ows:UpperCorner>16.542858723998947 48.312095366919394</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:ARCHAEOSTRASSENOGD</Name>
+      <Title>Archäologische Straßenzüge</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_ARCHAEO_STRASSE_MA_L</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.30170415257443 48.13018828559121</ows:LowerCorner>
+        <ows:UpperCorner>16.472989596922794 48.233388055470286</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:ARZTOGD</Name>
+      <Title>Arzt</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_INFRA_AERZTE_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.206617521471593 48.121712072043785</ows:LowerCorner>
+        <ows:UpperCorner>16.52752149442147 48.302759482990105</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:AUSBLICKSPUNKTOGD</Name>
+      <Title>Ausblickspunkt</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_ARCH_AUSBLICK_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.285632981055375 48.17824481306954</ows:LowerCorner>
+        <ows:UpperCorner>16.410097900058958 48.27785840897186</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:BADESTELLENOGD</Name>
+      <Title>Badestellen</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.362 48.167</ows:LowerCorner>
+        <ows:UpperCorner>16.541 48.28</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:BANKAUSTRIAOGD</Name>
+      <Title>Bank Austria</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_BARRIEREFREI_BA</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.268877223959894 48.12775529389755</ows:LowerCorner>
+        <ows:UpperCorner>16.48886200571501 48.288571079187626</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:FMZKBKMOGD</Name>
+      <Title>Baukörpermodell</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_FMZK_BKM_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.123518601683124 47.83918341558823</ows:LowerCorner>
+        <ows:UpperCorner>16.535060875506264 49.18826901826311</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:BAUMKATOGD</Name>
+      <Title>Baumkataster</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_BAUM_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.194416024614103 48.04390478966986</ows:LowerCorner>
+        <ows:UpperCorner>16.548532221445086 48.39802098650085</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:BAUPERIODEDETAILOGD</Name>
+      <Title>Bauperioden Detail</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.19375564066023 48.12459025331916</ows:LowerCorner>
+        <ows:UpperCorner>16.53919679561962 48.31233007860976</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:BAUPERIODEGROBOGD</Name>
+      <Title>Bauperiodenübersicht</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.17859777782934 48.11850162709472</ows:LowerCorner>
+        <ows:UpperCorner>16.4988444467726 48.32338959516675</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:GEBAEUDETYPOGD</Name>
+      <Title>Bautypologien</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_ARCH_M19OBJEKTE_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.17859777782934 48.11836633616353</ows:LowerCorner>
+        <ows:UpperCorner>16.575551974706862 48.32338764944726</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:BEFUNDARCHAEOOGD</Name>
+      <Title>Befund Archäologie</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_ARCH_LLBEFUND_ARCH_L</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.366602008460838 48.20804097367946</ows:LowerCorner>
+        <ows:UpperCorner>16.376055315284685 48.21315213022094</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:BEGEGNUNGSZONEOGD</Name>
+      <Title>Begegnungszone</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_VERKEHR_BG_ZONE_F</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.341908317347595 48.196189953024586</ows:LowerCorner>
+        <ows:UpperCorner>16.36146316932699 48.20261866544707</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:BEHINDERTENPARKPLATZOGD</Name>
+      <Title>Behindertenparkplatz</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.203 48.127</ows:LowerCorner>
+        <ows:UpperCorner>16.541 48.303</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:BERATUNGSZENTROGD</Name>
+      <Title>Beratungszentrum</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_INFRA_FSWBERATUNG_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.337322417725545 48.18577861450687</ows:LowerCorner>
+        <ows:UpperCorner>16.43379487731545 48.25181975611302</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:BLICKBETRACHTABOGD</Name>
+      <Title>Betrachtungsbereich A,B</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_ARCH_WIEN_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.181374193250914 48.11767275055019</ows:LowerCorner>
+        <ows:UpperCorner>16.578324921874202 48.32269396124336</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:BLICKBETRACHTCOGD</Name>
+      <Title>Betrachtungsbereich C</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_ARCH_BLICKZIEL_BUFFER_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.258235244518605 48.136513723130015</ows:LowerCorner>
+        <ows:UpperCorner>16.460290149729353 48.266701879573645</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:BEZIRKSGRENZEOGD</Name>
+      <Title>Bezirksgrenzen</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.181 48.118</ows:LowerCorner>
+        <ows:UpperCorner>16.578 48.323</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:BIOSPHPARKFOGD</Name>
+      <Title>Biosphärenpark</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.181 48.124</ows:LowerCorner>
+        <ows:UpperCorner>16.367 48.29</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:BTKARTIERUNGOGD</Name>
+      <Title>Biotoptypenkartierung</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.181 48.119</ows:LowerCorner>
+        <ows:UpperCorner>16.578 48.323</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:BTKLBACHOGD</Name>
+      <Title>Biotoptypenkartierung kleine Bäche</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.183 48.151</ows:LowerCorner>
+        <ows:UpperCorner>16.363 48.281</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:SICHTBARKEITPOGD</Name>
+      <Title>Blickziel</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_ARCH_BLICKZIEL_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.27868168042144 48.15070586974825</ows:LowerCorner>
+        <ows:UpperCorner>16.43834723012373 48.27788007959758</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:M29BOHROGD</Name>
+      <Title>Bohrlöcher</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>14.92859328463038 47.64702771966589</ows:LowerCorner>
+        <ows:UpperCorner>16.65307360630093 48.3406492672821</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:BOTSCHAFTOGD</Name>
+      <Title>Botschaft</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_BOTSCHAFT_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.252890152559832 48.13513791402511</ows:LowerCorner>
+        <ows:UpperCorner>16.443010412988237 48.268965943736646</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:BRUECKENOGD</Name>
+      <Title>Brücken</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_GRUNDBAU_BAUWERK_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.196050007871914 48.12373238953371</ows:LowerCorner>
+        <ows:UpperCorner>16.576981077832304 48.31164808120426</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:BRUECKETUNNELOGD</Name>
+      <Title>Brücken und Tunnel der Landesstraßen B+L</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.196 48.124</ows:LowerCorner>
+        <ows:UpperCorner>16.577 48.312</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:BUSHALTEZONEOGD</Name>
+      <Title>Bushaltezone</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_VERKEHR_BUSHALT_L</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.318117314641395 48.18648417230808</ows:LowerCorner>
+        <ows:UpperCorner>16.420518767951357 48.251119490510945</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:BUSPARKPLATZOGD</Name>
+      <Title>Busparkplatz</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_VERKEHR_BUSPARK_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.31861562431328 48.18554283774788</ows:LowerCorner>
+        <ows:UpperCorner>16.405097132913227 48.226296739135904</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:BUSVERBOTSZONEOGD</Name>
+      <Title>Busverbotszone</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_VERKEHR_BUSVERBOT_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.337587707434963 48.18881674009515</ows:LowerCorner>
+        <ows:UpperCorner>16.384834039964566 48.233139624084586</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:BUECHEREIOGD</Name>
+      <Title>Bücherei</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.271 48.136</ows:LowerCorner>
+        <ows:UpperCorner>16.486 48.278</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:BUERGERDIENSTOGD</Name>
+      <Title>Bürgerdienst-Bezirksstellen</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.282 48.135</ows:LowerCorner>
+        <ows:UpperCorner>16.438 48.258</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:CAMPINGPLATZOGD</Name>
+      <Title>Campingplatz</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.25 48.15</ows:LowerCorner>
+        <ows:UpperCorner>16.446 48.214</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:CARSHARINGOGD</Name>
+      <Title>Carsharing</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_VERKEHR_CARSHARING_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.262014688241166 48.135300296516306</ows:LowerCorner>
+        <ows:UpperCorner>16.441186851970222 48.25805862538012</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:CHRISTBAUMOGD</Name>
+      <Title>Christbaumsammelstelle</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.127219530436506 48.01905458859106</ows:LowerCorner>
+        <ows:UpperCorner>16.531485926349273 48.289034544766565</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:CITYBIKEOGD</Name>
+      <Title>Citybikes</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.312 48.175</ows:LowerCorner>
+        <ows:UpperCorner>16.421 48.244</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:COOLESTRASSENOGD</Name>
+      <Title>Coole Strassen</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_MZK_COOLE_STRASSEN_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.313305442957645 48.14979778344221</ows:LowerCorner>
+        <ows:UpperCorner>16.3882017478443 48.22739827037689</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:DAUERZAEHLOGD</Name>
+      <Title>Dauerzählstelle</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_DAUERZAEHLSTELLE_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.22468356576433 48.12548092393225</ows:LowerCorner>
+        <ows:UpperCorner>16.537771198737023 48.302064806260546</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:DEFIBRILLATOROGD</Name>
+      <Title>Defibrillatoren</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.223 48.133</ows:LowerCorner>
+        <ows:UpperCorner>16.528 48.3</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:DONAUINSFLOGD</Name>
+      <Title>Donauinsel - Flächen (FKK)</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.357 48.162</ows:LowerCorner>
+        <ows:UpperCorner>16.512 48.282</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:DONAUINSPKTOGD</Name>
+      <Title>Donauinsel - Punkte</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.348 48.164</ows:LowerCorner>
+        <ows:UpperCorner>16.51 48.298</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:DONAUINSLTSYOGD</Name>
+      <Title>Donauinselleitsystem</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.34496557501253 48.155482264660314</ows:LowerCorner>
+        <ows:UpperCorner>16.52571453031112 48.29837076023122</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:DONAUKILOMETEROGD</Name>
+      <Title>Donaukilometrierung</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.347 48.135</ows:LowerCorner>
+        <ows:UpperCorner>16.576 48.291</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WAHL.ERGEBNIS_BP161_V_F</Name>
+      <Title>ERGEBNIS_BP161_V_F</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>ERGEBNIS_BP161_V_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.17859777782934 48.11836633616353</ows:LowerCorner>
+        <ows:UpperCorner>16.575551974706862 48.32338764944726</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WAHL.ERGEBNIS_BP162_V_F</Name>
+      <Title>ERGEBNIS_BP162_V_F</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>ERGEBNIS_BP162_V_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.123518601683124 48.135967814297224</ows:LowerCorner>
+        <ows:UpperCorner>16.535060875506264 49.18826901826311</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WAHLERGEBNISBP164</Name>
+      <Title>ERGEBNIS_BP164_V_F</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>ERGEBNIS_BP164_V_F</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.17859777782934 48.11836633616353</ows:LowerCorner>
+        <ows:UpperCorner>16.575551974706862 48.32338764944726</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WAHLERGEBNISNR171</Name>
+      <Title>ERGEBNIS_NR171_V_F</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>ERGEBNIS_NR171_V_F</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.17859777782934 48.11836633616353</ows:LowerCorner>
+        <ows:UpperCorner>16.575551974706862 48.32338764944726</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:EUPROJEKTEOGD</Name>
+      <Title>EU-Projekte</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_EU_FOERDERUNG_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.22155278813496 48.137133418836655</ows:LowerCorner>
+        <ows:UpperCorner>16.53093835561439 48.2544995053502</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:EINBAHNOGD</Name>
+      <Title>Einbahnen</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_EINBAHN_L</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.130177450305396 47.973391148577186</ows:LowerCorner>
+        <ows:UpperCorner>16.53408586781255 48.24337511733843</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WAHLERGEBNISEU191OGD</Name>
+      <Title>Ergebnis EU-Wahl 2019</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>ERGEBNIS_EU191_V_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.181374193250907 48.11767275055019</ows:LowerCorner>
+        <ows:UpperCorner>16.578324921874202 48.32269396124336</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WAHLSPREU2019OGD</Name>
+      <Title>Europawahl 2019</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_WAHLSPR_EU2019_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.181374193250907 48.11767275055019</ows:LowerCorner>
+        <ows:UpperCorner>16.578324921874202 48.32269396124336</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:FMZKGEBOGD</Name>
+      <Title>FMZK - Gebäude</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_FMZK_GEBAEUDE_F</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.123518601683124 47.83918341558823</ows:LowerCorner>
+        <ows:UpperCorner>16.535060875506264 49.18826901826311</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:FMZKGEWOGD</Name>
+      <Title>FMZK - Gewässer</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_FMZK_GEWAESSER_F</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.123518601683124 47.83918341558823</ows:LowerCorner>
+        <ows:UpperCorner>16.535060875506264 49.18826901826311</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:FMZKGRUEN1OGD</Name>
+      <Title>FMZK - Gruen1</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_FMZK_GRUEN1_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.123518601683124 47.83918341558823</ows:LowerCorner>
+        <ows:UpperCorner>16.535060875506264 49.18826901826311</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:FMZKGRUEN2OGD</Name>
+      <Title>FMZK - Gruen2</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_FMZK_GRUEN2_F</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.123518601683124 47.83918341558823</ows:LowerCorner>
+        <ows:UpperCorner>16.535060875506264 49.18826901826311</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:FMZKMAUOGD</Name>
+      <Title>FMZK - Mauer</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_FMZK_MAUERN_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.123518601683124 47.83918341558823</ows:LowerCorner>
+        <ows:UpperCorner>16.535060875506264 49.18826901826311</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:FMZKVERKEHR1OGD</Name>
+      <Title>FMZK - Verkehr1</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_FMZK_VERKEHR1_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.123518601683124 47.83918341558823</ows:LowerCorner>
+        <ows:UpperCorner>16.535060875506264 49.18826901826311</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:FMZKVERKEHR2OGD</Name>
+      <Title>FMZK - Verkehr2</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_FMZK_VERKEHR2_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.123518601683124 47.83918341558823</ows:LowerCorner>
+        <ows:UpperCorner>16.535060875506264 49.18826901826311</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:FAHRRADABSTELLANLAGEOGD</Name>
+      <Title>Fahrradabstellanlage</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.217 48.126</ows:LowerCorner>
+        <ows:UpperCorner>16.541 48.302</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:FAHRSCHULEOGD</Name>
+      <Title>Fahrschule Wien</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.271 48.126</ows:LowerCorner>
+        <ows:UpperCorner>16.477 48.258</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:FAMHEBAMMEOGD</Name>
+      <Title>Familienhebammen</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_FAMILIENHEBAMME_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.33506849334643 48.19449524784559</ows:LowerCorner>
+        <ows:UpperCorner>16.474989720418204 48.2350737942027</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:FIAKEROGD</Name>
+      <Title>Fiakerstandplatz</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_FIAKERSTANDPL_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.36545280643826 48.20451760884916</ows:LowerCorner>
+        <ows:UpperCorner>16.373778971212378 48.20916887926174</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:FLIESSGEWOGD</Name>
+      <Title>Fließgewässer</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.183 48.124</ows:LowerCorner>
+        <ows:UpperCorner>16.578 48.312</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:FORTIFIKATIONOGD</Name>
+      <Title>Fortifikation</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_ARCH_LLFORTIFIKATION_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.36635696748076 48.208020213604264</ows:LowerCorner>
+        <ows:UpperCorner>16.375731406587285 48.21421879321642</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:FRANZKATOGD</Name>
+      <Title>Franziszeischer Kataster</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_ARCHAEO_FRANZKAT_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.130177450305396 47.973391148577186</ows:LowerCorner>
+        <ows:UpperCorner>16.53408586781255 48.24337511733843</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:FREQUENZKARTEOGD</Name>
+      <Title>Frequenzkarte</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_ARCH_BEWEGUNGSRAEUME_F</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.19743671906078 48.12369961432727</ows:LowerCorner>
+        <ows:UpperCorner>16.541524325987627 48.317278035210094</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:FRIEDHOFOGD</Name>
+      <Title>Friedhof</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.234 48.126</ows:LowerCorner>
+        <ows:UpperCorner>16.533 48.305</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:FUNDBOXENOGD</Name>
+      <Title>Fundboxen</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_REINIGUNG_FUNDBOX_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.28188575016822 48.134753380707046</ows:LowerCorner>
+        <ows:UpperCorner>16.528218670359003 48.29382427560596</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:FUSSGEHERZONEOGD</Name>
+      <Title>Fußgängerzonen</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.290353468248032 48.15796594943664</ows:LowerCorner>
+        <ows:UpperCorner>16.467683149915086 48.259315405584545</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:GABELPUNKTOGD</Name>
+      <Title>Gabelpunkte</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_FESTL_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.192843255566974 48.12943044446256</ows:LowerCorner>
+        <ows:UpperCorner>16.538650367464403 48.31078271701012</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:GARAGENOGD</Name>
+      <Title>Garagen (inkl. Park and Ride)</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_GARAGE_WKW_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.092180001296967 48.10191456879163</ows:LowerCorner>
+        <ows:UpperCorner>16.633158114232533 48.342156083366596</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:GEBIETSBETREUUNGOGD</Name>
+      <Title>Gebietsbetreuung</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_M25_GEBIETSBETREUUNG_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.29390867083554 48.14786512997572</ows:LowerCorner>
+        <ows:UpperCorner>16.501833558913713 48.273523454169734</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:GEBAEUDEINFOOGD</Name>
+      <Title>Gebäudeinformationen Allgemein</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.193778322633687 48.12595589664557</ows:LowerCorner>
+        <ows:UpperCorner>16.53654374434416 48.311920981879474</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:ENGEFPVANLOGD</Name>
+      <Title>Geförderte Photovoltaikanlagen</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_M20_PV_ANLAGEN_GEF_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.186320568128888 48.122915364385456</ows:LowerCorner>
+        <ows:UpperCorner>16.543561296667654 48.30374233557783</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:ENGEFSTANLOGD</Name>
+      <Title>Geförderte Solarthermieanlagen</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_M20_ST_ANLAGEN_GEF_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.19178878373649 48.125401917002975</ows:LowerCorner>
+        <ows:UpperCorner>16.54617429075683 48.30759687217846</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:SISGEHSTEIGABSOGD</Name>
+      <Title>Gehsteigabsenkung</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_ABSENK_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.199026140434317 48.12127261141644</ows:LowerCorner>
+        <ows:UpperCorner>16.545158584573098 48.30390555548896</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:GSTGBREITEOGD</Name>
+      <Title>Gehsteigbreiten 2016</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>Phase 30</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.195271947765978 48.12147328487746</ows:LowerCorner>
+        <ows:UpperCorner>16.546438642098956 48.311159771634095</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:GEMBAUTENFLOGD</Name>
+      <Title>Gemeindebauten</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_GEMEINDEBAU_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.209454289927283 48.125669228304524</ows:LowerCorner>
+        <ows:UpperCorner>16.527128184823034 48.30164300437663</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:GENFLWIDMUNGOGD</Name>
+      <Title>Generalisierte Flächenwidmung</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_GENFLW_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.18137415684291 48.1176705022298</ows:LowerCorner>
+        <ows:UpperCorner>16.578324921874202 48.32269396123862</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:GEONAMENSVERZOGD</Name>
+      <Title>Geografisches Namensverzeichnis</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.129815429197244 48.10829262240523</ows:LowerCorner>
+        <ows:UpperCorner>16.534433616525693 48.333306143159454</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:GENFLWOGD</Name>
+      <Title>Geoland - Shape</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_GEOLAND_GENFLW_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.190625917505677 48.121094624401444</ows:LowerCorner>
+        <ows:UpperCorner>16.544133180552997 48.306541450059946</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:GEONAMENOGD</Name>
+      <Title>Geonamen</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_GEONAME_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.18091370324968 48.12144708310672</ows:LowerCorner>
+        <ows:UpperCorner>16.57712944231662 48.321557868167254</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:KULTURWIKIOGD</Name>
+      <Title>Geschichte WIKI</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_KULTURWIKI_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.190671736636045 48.11994604050482</ows:LowerCorner>
+        <ows:UpperCorner>16.56091160180304 48.32375485993258</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:GESCHBIOFLOGD</Name>
+      <Title>Geschützte Biotope</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.297 48.174</ows:LowerCorner>
+        <ows:UpperCorner>16.409 48.312</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:GESCHLANDTEILEOGD</Name>
+      <Title>Geschützte Landschaftsteile</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.343 48.155</ows:LowerCorner>
+        <ows:UpperCorner>16.501 48.169</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:DONAUKILOMETER2OGD</Name>
+      <Title>Gewässer-Kilometrierung</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_KALIBRIERUNGSPUNKTE_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.165074329288043 48.12464579799213</ows:LowerCorner>
+        <ows:UpperCorner>16.57417275432421 48.31454191423967</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:GRILLPLATZOGD</Name>
+      <Title>Grillplätze</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.226 48.15</ows:LowerCorner>
+        <ows:UpperCorner>16.48 48.268</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:GRILLZONEOGD</Name>
+      <Title>Grillzone</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_INFRA_GRILLPLATZ_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.399720752273836 48.195151772499266</ows:LowerCorner>
+        <ows:UpperCorner>16.463575532944144 48.23934194670308</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:GRDSTKSTADTBEFOGD</Name>
+      <Title>Grundstücksinformation zur Stadtbefestigung</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_ARCHAEO_STADTBEFGSTINF_F</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.35862250040009 48.20139232850215</ows:LowerCorner>
+        <ows:UpperCorner>16.38281891412438 48.216341642292285</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:GRUENGEWOGD</Name>
+      <Title>Grüngürtel Wien - Gewässer</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.187 48.119</ows:LowerCorner>
+        <ows:UpperCorner>16.578 48.313</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:GRUENFREIFLOGD</Name>
+      <Title>Grüngürtel Wien Freifläche</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.181 48.118</ows:LowerCorner>
+        <ows:UpperCorner>16.578 48.323</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:HALTESTELLEWLOGD</Name>
+      <Title>Haltestellen Wiener Linien</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.198 48.122</ows:LowerCorner>
+        <ows:UpperCorner>16.55 48.311</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:HAUPTSTRARCHOGD</Name>
+      <Title>Hauptstraße</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_ARCH_LLHAUPTSTRASSE_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.366727721403013 48.20842605684564</ows:LowerCorner>
+        <ows:UpperCorner>16.3752583865991 48.2141167787464</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:HAUSBETREUUNGOGD</Name>
+      <Title>Haus-und Außenbetreuung</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_HAUSBETREUUNG_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.278887691525348 48.13585142314733</ows:LowerCorner>
+        <ows:UpperCorner>16.45375492777113 48.27830660882736</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:HISTWASSERLTGOGD</Name>
+      <Title>Historische Wasserleitung</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.13 48.108</ows:LowerCorner>
+        <ows:UpperCorner>16.534 48.333</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:PLANUNGAUTOBOGD</Name>
+      <Title>Hochrangiges Straßennetz - Planung Autobahn</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.178 47.809</ows:LowerCorner>
+        <ows:UpperCorner>16.845 48.786</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:PLANUNGHPTSTROGD</Name>
+      <Title>Hochrangiges Straßennetz - Planung Hauptstraße</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.32 48.131</ows:LowerCorner>
+        <ows:UpperCorner>16.587 48.296</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:PLANUNGKNOTENOGD</Name>
+      <Title>Hochrangiges Straßennetz - Planung Knoten</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_IV_KNOPLAN_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.413661936422383 48.14889812777427</ows:LowerCorner>
+        <ows:UpperCorner>16.564100369501023 48.267826811936054</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:PLANUNGSCHNELLOGD</Name>
+      <Title>Hochrangiges Straßennetz - Planung Schnellstraße</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_IV_SPLAN_L</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.04508213279298 48.14921608849946</ows:LowerCorner>
+        <ows:UpperCorner>16.95296126275767 48.75527943408773</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:HWGEFAHROGD</Name>
+      <Title>Hochwasser Gefahrenzonenplan</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_GFZ_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.18883713945179 48.12409943900804</ows:LowerCorner>
+        <ows:UpperCorner>16.469252284442888 48.2676278206013</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:HWASSERFLUTOGD</Name>
+      <Title>Hochwasserüberflutungsflächen</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_HQ_F</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.19537065996638 48.09100834471338</ows:LowerCorner>
+        <ows:UpperCorner>16.63231906076785 48.30614634360534</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:UNTERKUNFTOGD</Name>
+      <Title>Hotel</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_INFRA_UNTERKUNFT_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.227023854675778 48.135787766438234</ows:LowerCorner>
+        <ows:UpperCorner>16.529751179884506 48.29191300174459</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:HUNDESACKERLOGD</Name>
+      <Title>Hundekotsackerlspender</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.201 48.123</ows:LowerCorner>
+        <ows:UpperCorner>16.547 48.309</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:HUNDEZONEOGD</Name>
+      <Title>Hundezone</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.267 48.131</ows:LowerCorner>
+        <ows:UpperCorner>16.481 48.287</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:HYDRANTOGD</Name>
+      <Title>Hydranten</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_WASSER_M31HYDRANT_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.184621939868556 48.122053479064725</ows:LowerCorner>
+        <ows:UpperCorner>16.547435133743658 48.31194029570232</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:HOEHENFESTPKTOGD</Name>
+      <Title>Höhenfestpunkte</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_STP_FESTH_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.186650343931767 48.12631089101547</ows:LowerCorner>
+        <ows:UpperCorner>16.544136390845836 48.31367094378636</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:HOEHENLINIEOGD</Name>
+      <Title>Höhenlinien</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_ISOAD_L</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.17702077886623 48.11705394712485</ows:LowerCorner>
+        <ows:UpperCorner>16.646493416326965 48.33330609847842</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:IMPFSTELLEOGD</Name>
+      <Title>Impfstellen</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_IMPFSTELLE_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.28103609906273 48.13617552724983</ows:LowerCorner>
+        <ows:UpperCorner>16.434222641231155 48.25659787335803</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:ENINNOVPRJV2OGD</Name>
+      <Title>Innovative Energieprojekte</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_ENERGIEPROJEKTE_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.290073199021236 48.12682930287386</ows:LowerCorner>
+        <ows:UpperCorner>16.51361585080878 48.252662263754914</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:ENINNOVPRJOGD</Name>
+      <Title>Innovative Energieprojekte</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_M20_ENERGIEPROJEKTE_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.24413770593679 48.12304164840995</ows:LowerCorner>
+        <ows:UpperCorner>16.506900582442324 48.288003863336115</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:ENINNOVPRJFOTOOGD</Name>
+      <Title>Innovative Energieprojekte Fotos</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_ENERGIEPROJEKTE_FOTO_T</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#4326</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>-180.0 -90.0</ows:LowerCorner>
+        <ows:UpperCorner>180.0 90.0</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:INTORGOGD</Name>
+      <Title>Internationale Organisationen</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.346 48.196</ows:LowerCorner>
+        <ows:UpperCorner>16.417 48.235</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:KASERNEOGD</Name>
+      <Title>Kaserne</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_ARCH_LLKASERNE_L</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.366826458229845 48.20849553570327</ows:LowerCorner>
+        <ows:UpperCorner>16.374641872602986 48.2124641177879</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:JGDANGEBOTOGD</Name>
+      <Title>Kinder- und Jugendangebot</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_BIJU_ANGEBOT_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.252415796837923 48.12958449947561</ows:LowerCorner>
+        <ows:UpperCorner>16.486346750252498 48.26992764929325</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:KINDERGARTENOGD</Name>
+      <Title>Kindergarten</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.206816697435457 48.125614407455814</ows:LowerCorner>
+        <ows:UpperCorner>16.539201305413926 48.30160468171081</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:KRANKENHAUSOGD</Name>
+      <Title>Krankenhaus</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.263 48.162</ows:LowerCorner>
+        <ows:UpperCorner>16.464 48.293</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:KUNSTWERKOGD</Name>
+      <Title>Kunstwerke im Öffentlichen Raum - Kulturgut</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>10.834 47.992</ows:LowerCorner>
+        <ows:UpperCorner>16.541 48.316</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:KURZPARKZONEOGD</Name>
+      <Title>Kurzparkzone (Fläche)</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.255 48.135</ows:LowerCorner>
+        <ows:UpperCorner>16.493 48.282</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:KURZPARKSTREIFENOGD</Name>
+      <Title>Kurzparkzone (Linie)</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.213 48.126</ows:LowerCorner>
+        <ows:UpperCorner>16.527 48.295</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:PARKENBERECHTOGD</Name>
+      <Title>Kurzparkzonen-Berechtigungszone</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.185 48.155</ows:LowerCorner>
+        <ows:UpperCorner>16.499 48.264</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:PARKENGELTUNGOGD</Name>
+      <Title>Kurzparkzonen-Geltungsbereich</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.255 48.135</ows:LowerCorner>
+        <ows:UpperCorner>16.493 48.282</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:LADEZONEOGD</Name>
+      <Title>Ladezonen</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_LADEZONE_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.198970261908627 48.12671353748672</ows:LowerCorner>
+        <ows:UpperCorner>16.5006206690979 48.29882423401412</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:LADEZONENOGD</Name>
+      <Title>Ladezonen</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_LADEZONE_L</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.201655696133926 48.12569049933173</ows:LowerCorner>
+        <ows:UpperCorner>16.50998175602603 48.30179101505641</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:LAGERBAUOGD</Name>
+      <Title>Lagerbau</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_ARCH_LLLAGERBAU_F</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.367608225134173 48.21016764090219</ows:LowerCorner>
+        <ows:UpperCorner>16.37385234942951 48.212945676594245</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:LAMPENTAUSCHOGD</Name>
+      <Title>Lampentausch</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_SHL_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.19368788159754 48.121357847303535</ows:LowerCorner>
+        <ows:UpperCorner>16.549174930478856 48.312997013035734</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:LANDESGRENZEOGD</Name>
+      <Title>Landesgrenzen</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.181 48.118</ows:LowerCorner>
+        <ows:UpperCorner>16.578 48.323</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:LANDSCHUTZGEBOGD</Name>
+      <Title>Landschaftsschutzgebiet</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.185 48.124</ows:LowerCorner>
+        <ows:UpperCorner>16.527 48.323</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:LUFTGUETENETZOGD</Name>
+      <Title>Luftgütenetz</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_LUFTM_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.130177450305396 47.973391148577186</ows:LowerCorner>
+        <ows:UpperCorner>16.53408586781255 48.24337511733843</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:LAERMSCHUTZOGD</Name>
+      <Title>Lärmschutz</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_M29_LSWBAUT_L</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.210725156086042 48.13710807092394</ows:LowerCorner>
+        <ows:UpperCorner>16.47616037859251 48.279321511550954</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:LAERMSCHUTZWANDOGD</Name>
+      <Title>Lärmschutz</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_GRUNDBAU_LSW_L</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.213501704089534 48.13641415856981</ows:LowerCorner>
+        <ows:UpperCorner>16.478934610691283 48.27862774256821</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:MZKBLATT1000OGD</Name>
+      <Title>MZK Blattschnitt 1:1000</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_MZK_1000INFO_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.174272312280916 48.11790304826687</ows:LowerCorner>
+        <ows:UpperCorner>16.578822714510775 48.32500423365252</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:MZKBLATT5000OGD</Name>
+      <Title>MZK Blattschnitt 1:5000</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_RAST5000_F</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.16075707726993 48.10869064623571</ows:LowerCorner>
+        <ows:UpperCorner>16.66653253088944 48.33399961695274</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:MARATHONOGD</Name>
+      <Title>Marathon</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_INFRA_VCM2020_L</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.31427601400618 48.18397408611377</ows:LowerCorner>
+        <ows:UpperCorner>16.439320070924857 48.232808024201205</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:MAUEROGD</Name>
+      <Title>Mauer ohne ASFINAG und WL</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_GRUNDBAU_MAUER_L</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.195985236325598 48.12958142211335</ows:LowerCorner>
+        <ows:UpperCorner>16.495344184476856 48.299089730003345</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:MISTPLATZOGD</Name>
+      <Title>Mistplatz</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.286 48.138</ows:LowerCorner>
+        <ows:UpperCorner>16.528 48.296</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:BURGSCHLOSSOGD</Name>
+      <Title>Mittelalterl. Burgen u. Schlösser</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.217 48.131</ows:LowerCorner>
+        <ows:UpperCorner>16.523 48.303</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:MITTELALTMAUEROGD</Name>
+      <Title>Mittelalterliche Siedlungsbereiche - Mauer</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_ARCHAEO_MAMAUERN_L</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.361570706959284 48.20347443195122</ows:LowerCorner>
+        <ows:UpperCorner>16.379804469971106 48.21436553104251</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:MITTELALTSDLGOGD</Name>
+      <Title>Mittelalterliche Siedlungsbereiche - Siedlung</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_ARCHAEO_MA_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.36385017149846 48.20717354455467</ows:LowerCorner>
+        <ows:UpperCorner>16.37882744684236 48.2143473227847</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:MITTELALTBEFESTOGD</Name>
+      <Title>Mittelalterliche Stadtbefestigung</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_ARCHAEO_STADTBEF_MA_F</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.361142418339107 48.203163289023344</ows:LowerCorner>
+        <ows:UpperCorner>16.380331536070017 48.21454803428024</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:MONUMENTALBRUOGD</Name>
+      <Title>Monumentalbrunnen</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_MONUMENTALBRUNNEN_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.28103609906273 48.13617552724983</ows:LowerCorner>
+        <ows:UpperCorner>16.434222641231155 48.25659787335803</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:MOTORRADABSTELLPLATZOGD</Name>
+      <Title>Motorradabstellplatz</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.282 48.135</ows:LowerCorner>
+        <ows:UpperCorner>16.488 48.286</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:MULTIMEDIAOGD</Name>
+      <Title>Multimediastationen</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.221 48.12</ows:LowerCorner>
+        <ows:UpperCorner>16.562 48.301</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:MUSEUMOGD</Name>
+      <Title>Museum</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.246 48.132</ows:LowerCorner>
+        <ows:UpperCorner>16.524 48.283</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:MUSIKSINGSCHULEOGD</Name>
+      <Title>Musik- und Singschule</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.223 48.135</ows:LowerCorner>
+        <ows:UpperCorner>16.484 48.3</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:NATIONALPARKOGD_B</Name>
+      <Title>Nationalpark</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.47 48.135</ows:LowerCorner>
+        <ows:UpperCorner>16.578 48.204</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:NATURA2TOGD</Name>
+      <Title>Natura 2000 FloraFaunaHabitatrichtlinie</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.181 48.124</ows:LowerCorner>
+        <ows:UpperCorner>16.578 48.323</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:NATURA2TVOGELOGD</Name>
+      <Title>Natura 2000 Vogelschutzrichtlinie</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.181 48.124</ows:LowerCorner>
+        <ows:UpperCorner>16.578 48.323</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:NATDENKMALPKTOGD</Name>
+      <Title>Naturdenkmal</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.212 48.128</ows:LowerCorner>
+        <ows:UpperCorner>16.52 48.321</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:NATURSCHUTZGEBOGD</Name>
+      <Title>Naturschutzgebiet</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.182 48.135</ows:LowerCorner>
+        <ows:UpperCorner>16.578 48.204</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:NETZWERKNATLINOGD</Name>
+      <Title>Netzwerk Natur</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_NENA_L</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.202879816173898 48.123834339016256</ows:LowerCorner>
+        <ows:UpperCorner>16.551710345548276 48.31189036534088</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:NETZWERKIBEZFOGD</Name>
+      <Title>Netzwerk Natur Fläche</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.292 48.155</ows:LowerCorner>
+        <ows:UpperCorner>16.43 48.236</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:NETZWERKNATFLOGD</Name>
+      <Title>Netzwerk Natur Fläche</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.185 48.12</ows:LowerCorner>
+        <ows:UpperCorner>16.547 48.323</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:NETZWERKIBEZLOGD</Name>
+      <Title>Netzwerk Natur Linie</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.304 48.167</ows:LowerCorner>
+        <ows:UpperCorner>16.385 48.232</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:NETZWERKNATPKTOGD</Name>
+      <Title>Netzwerk Natur Punkt</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.207 48.126</ows:LowerCorner>
+        <ows:UpperCorner>16.355 48.278</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:PARKINFOOGD</Name>
+      <Title>Park</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_PARKINFORMATION_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.21211978917076 48.125914668723006</ows:LowerCorner>
+        <ows:UpperCorner>16.535121838897556 48.30313001069205</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:PARKLETSOGD</Name>
+      <Title>Parklets</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_PARKLETS_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.305089964221125 48.18608384397148</ows:LowerCorner>
+        <ows:UpperCorner>16.403808589710334 48.23121010484995</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:PARKENAUTOMATOGD</Name>
+      <Title>Parkschein-Automat</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.261 48.13</ows:LowerCorner>
+        <ows:UpperCorner>16.475 48.278</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:PARKENVERKAUFOGD</Name>
+      <Title>Parkschein-Geschäftsstelle</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.199 47.949</ows:LowerCorner>
+        <ows:UpperCorner>16.846 48.357</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:PARTIZIPATIONOGD</Name>
+      <Title>Partizipationsprojekte</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_PARTIPROJEKT_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.123518601683124 47.83918341558823</ows:LowerCorner>
+        <ows:UpperCorner>16.535060875506264 49.18826901826311</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:PFARRSPRENGELOGD</Name>
+      <Title>Pfarrsprengel</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.181374101164963 48.1176728793458</ows:LowerCorner>
+        <ows:UpperCorner>16.578324830793836 48.32269409072525</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:POLIZEIOGD</Name>
+      <Title>Polizei</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_POLIZEI_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.21911223112888 48.13158423226136</ows:LowerCorner>
+        <ows:UpperCorner>16.52849518184176 48.293743818253375</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:ERDWSONDOGD</Name>
+      <Title>Potenzialkarte Erdwärmesonden bis 30m</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_M20_ERDWAERMESONDE_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.17854381310134 48.11836410816927</ows:LowerCorner>
+        <ows:UpperCorner>16.575542326816198 48.32339820873114</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:THERMLEISTKLOGD</Name>
+      <Title>Potenzialkarte Thermische Grundwassernutzung</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_M20_THERM_GWNUTZ_F</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.17854381310134 48.11836410816927</ows:LowerCorner>
+        <ows:UpperCorner>16.575542326816198 48.32339820873114</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:PROBLEMSTOFFOGD</Name>
+      <Title>Problemstoffsammelstellen</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_PROSAFIX_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.28593337953016 48.13733623862171</ows:LowerCorner>
+        <ows:UpperCorner>16.5280908118067 48.29638548602401</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:BAUBLOCKOGD</Name>
+      <Title>RBW-Baublöcke</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.181 48.118</ows:LowerCorner>
+        <ows:UpperCorner>16.578 48.323</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:RADNETZOGD</Name>
+      <Title>Radnetz</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_RADNETZ_L</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.187852230751563 48.12031069110544</ows:LowerCorner>
+        <ows:UpperCorner>16.577539122979736 48.32091218815568</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:RADWEGEOGD</Name>
+      <Title>Radwege</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_RADFAHR_L</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.187863530326702 48.120073066682295</ows:LowerCorner>
+        <ows:UpperCorner>16.57751473337098 48.320912188060305</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:RAMSAROGD</Name>
+      <Title>Ramsar - Gebiet</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.523 48.14</ows:LowerCorner>
+        <ows:UpperCorner>16.578 48.18</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:REALNUT2016GOGD</Name>
+      <Title>Realnutzung 2016</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_RNK2016_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.17859777782934 48.11836633616353</ows:LowerCorner>
+        <ows:UpperCorner>16.575551974706862 48.32338764944726</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:REALNUT2001OGD</Name>
+      <Title>Realnutzungskartierung 2001</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.181 48.118</ows:LowerCorner>
+        <ows:UpperCorner>16.578 48.323</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:REALNUT2003OGD</Name>
+      <Title>Realnutzungskartierung 2003</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.13 48.108</ows:LowerCorner>
+        <ows:UpperCorner>16.534 48.333</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:REALNUT2005OGD</Name>
+      <Title>Realnutzungskartierung 2005</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.181 48.118</ows:LowerCorner>
+        <ows:UpperCorner>16.578 48.323</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:REALNUT200708OGD</Name>
+      <Title>Realnutzungskartierung 2007/08</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.181 48.118</ows:LowerCorner>
+        <ows:UpperCorner>16.578 48.323</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:REALNUT2009OGD</Name>
+      <Title>Realnutzungskartierung 2009</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.181 48.118</ows:LowerCorner>
+        <ows:UpperCorner>16.578 48.323</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:REALNUT2012OGD</Name>
+      <Title>Realnutzungskartierung 2012</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_RNK2012_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.181374193250907 48.11767275055019</ows:LowerCorner>
+        <ows:UpperCorner>16.578324921874202 48.32269396124336</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:REALNUT2018OGD</Name>
+      <Title>Realnutzungskartierung 2018</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_RNK2018_F</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.181374193250907 48.11767275055019</ows:LowerCorner>
+        <ows:UpperCorner>16.578324921874202 48.32269396124336</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:REALNUT2014OGD</Name>
+      <Title>Realnutzungskartierung bis 2014</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_RNK2014_F</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>-11179.5999999996 331050.75</ows:LowerCorner>
+        <ows:UpperCorner>18258.0199999996 353820.199999999</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:RELIGIONOGD</Name>
+      <Title>Religionsgemeinschaften</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_RELIGIONSGEM_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.209890619550002 48.1270736975326</ows:LowerCorner>
+        <ows:UpperCorner>16.53320254194371 48.3030032014763</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:SISBELAGOGD</Name>
+      <Title>SIS - Belagsflächen</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_BELAG_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.123518601683124 47.83918341558823</ows:LowerCorner>
+        <ows:UpperCorner>16.535060875506264 49.18826901826311</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:SISBORDSTOGD</Name>
+      <Title>SIS - Bordsteine</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_BORDST_L</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.123518601683124 47.83918341558823</ows:LowerCorner>
+        <ows:UpperCorner>16.535060875506264 49.18826901826311</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:SCHIFFANLEGESTOGD</Name>
+      <Title>Schiffsanlegestelle</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_INFRA_POI_SCHIFFSANLEGEST_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.367334692917197 48.21022355473124</ows:LowerCorner>
+        <ows:UpperCorner>16.40789095189669 48.263873553916774</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:SCHULEOGD</Name>
+      <Title>Schule</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.221 48.129</ows:LowerCorner>
+        <ows:UpperCorner>16.527 48.3</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:SCHWIMMBADOGD</Name>
+      <Title>Schwimmbad</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.223 48.133</ows:LowerCorner>
+        <ows:UpperCorner>16.459 48.3</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:SEHENSWUERDIGOGD</Name>
+      <Title>Sehenswürdigkeiten</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_INFRA_SEHENSW_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.278745192805196 48.15126949465303</ows:LowerCorner>
+        <ows:UpperCorner>16.438916204827816 48.24515636371208</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:SICHTBARKEITOGD</Name>
+      <Title>Sichtbarkeitskarte - Flächenbestand</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_ARCH_VIEWSHED_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.2367398007699 48.123897466804095</ows:LowerCorner>
+        <ows:UpperCorner>16.541524325987627 48.31728051661618</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:SILVESPFADLINOGD</Name>
+      <Title>Silvesterpfad Linien</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_SILVESTERPFAD_L</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.358809660541745 48.210437756495054</ows:LowerCorner>
+        <ows:UpperCorner>16.364198283530275 48.2119689673731</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:SILVESPFADPKTOGD</Name>
+      <Title>Silvesterpfad Punkte</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_SILVESTERPFAD_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.35848977494784 48.21069711983949</ows:LowerCorner>
+        <ows:UpperCorner>16.371732021619348 48.21330878395418</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:SIRENEOGD</Name>
+      <Title>Sirenenstandorte</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_INFRA_SIRENE_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.223024740885727 48.129850098396375</ows:LowerCorner>
+        <ows:UpperCorner>16.532198142191334 48.30213227789077</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:SOMMERSPRITZEROGD</Name>
+      <Title>Sommerspritzer Sprühnebel</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_WASSER_SOMMERSPRITZER_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.33234574394795 45.13988074850804</ows:LowerCorner>
+        <ows:UpperCorner>16.332358458295705 45.13988974700666</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:ENSONSTANLOGD</Name>
+      <Title>Sonstige Energieerzeugungsanlagen</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_M20_SONST_ANLAGEN_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.2572400532033 48.122699656960584</ows:LowerCorner>
+        <ows:UpperCorner>16.518593211904015 48.277800871766004</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:SOZIALMARKTOGD</Name>
+      <Title>Sozialmarkt</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.123518601683124 47.83918341558823</ows:LowerCorner>
+        <ows:UpperCorner>16.535060875506264 49.18826901826311</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:SPEZIALTRAUUNGOGD</Name>
+      <Title>Spezialtrauung</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_INFRA_SPEZIALTRAUUNG_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.22078194971299 48.13425930245501</ows:LowerCorner>
+        <ows:UpperCorner>16.519298002112723 48.31206680400103</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:SPIELPLATZPUNKTOGD</Name>
+      <Title>Spielplatz</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_SPIELPLATZINFO_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.214764357424144 48.12585507778133</ows:LowerCorner>
+        <ows:UpperCorner>16.535131705219804 48.302637720034</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:SPORTSTAETTENOGD</Name>
+      <Title>Sportstätten</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.202 48.125</ows:LowerCorner>
+        <ows:UpperCorner>16.541 48.3</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:STADTBEFESTIGOGD</Name>
+      <Title>Stadtbefestigung 16.-19. Jahrhundert</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_ARCHAEO_STADTBEF19JHDT_F</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.358884808809435 48.20173087115178</ows:LowerCorner>
+        <ows:UpperCorner>16.382322283138542 48.21595513819765</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:STADTKASSEOGD</Name>
+      <Title>Stadtkassen</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_STADTKASSE_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.279247685451818 48.13552554407334</ows:LowerCorner>
+        <ows:UpperCorner>16.435040153023664 48.25847558194587</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:SPAZIERLINIEOGD</Name>
+      <Title>Stadtspaziergang - Linien</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_INFRA_STADTSPAZIERGANG_L</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.305058056682498 48.15202981653121</ows:LowerCorner>
+        <ows:UpperCorner>16.451690229469765 48.2601793252204</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:SPAZIERPUNKTOGD</Name>
+      <Title>Stadtspaziergang - Punkte</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.305058056682498 48.15202981653121</ows:LowerCorner>
+        <ows:UpperCorner>16.451690229469765 48.2601793252204</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:STRUKALLEEBAUMOGD</Name>
+      <Title>Stadtstruktureller Plan Alleebaum einzeln</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_ARCH_STRUKALLEE_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.242765979956765 48.12541012009625</ows:LowerCorner>
+        <ows:UpperCorner>16.531195882695055 48.30613282706328</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:STRUKALLEEOGD</Name>
+      <Title>Stadtstruktureller Plan Alleebäume</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_ARCH_STRUKALLEE_L</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.260015991302645 48.13661114186533</ows:LowerCorner>
+        <ows:UpperCorner>16.457007653032502 48.304465862919216</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:STRUKBRUNNENOGD</Name>
+      <Title>Stadtstruktureller Plan Brunnen</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_ARCH_STRUKBRUNNEN_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.241349148671777 48.132176701154364</ows:LowerCorner>
+        <ows:UpperCorner>16.52615353423613 48.30198410586958</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:STRUKDOMINANTEOGD</Name>
+      <Title>Stadtstruktureller Plan Dominante 1. und 2. Ordnung</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_ARCH_STRUKDOMINANT_F</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.24534746792685 48.13771954094374</ows:LowerCorner>
+        <ows:UpperCorner>16.522902618560593 48.27937685737066</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:STRUKGESCHSTROGD</Name>
+      <Title>Stadtstruktureller Plan Geschäftsstraße 1., 2., 3. Ordnung</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_ARCH_STRUKGESCHSTR_F</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.20478633226353 48.13946668051277</ows:LowerCorner>
+        <ows:UpperCorner>16.41235785798585 48.2642260356036</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:STRUKGRUENRAUMOGD</Name>
+      <Title>Stadtstruktureller Plan Grünraum</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_ARCH_STRUKGRUENRAUM_F</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.264860387613396 48.13744245869254</ows:LowerCorner>
+        <ows:UpperCorner>16.52663052158246 48.303811755289054</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:STRUKMARKSITOGD</Name>
+      <Title>Stadtstruktureller Plan Markante Situation</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_ARCH_STRUKMARKSIT_F</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.27160114169661 48.15953576500799</ows:LowerCorner>
+        <ows:UpperCorner>16.484574850946686 48.304128510894856</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:STRUKBLICKPKTOGD</Name>
+      <Title>Stadtstruktureller Plan Markanter Blickpunkt-Pfeil</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_ARCH_STRUKBLICKPUNKT_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.24375797888672 48.13258701400247</ows:LowerCorner>
+        <ows:UpperCorner>16.524886249706476 48.30597056403286</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:STRUKKOMPLEXOGD</Name>
+      <Title>Stadtstruktureller Plan Markanter Komplex</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_ARCH_STRUKKOMPLEX_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.267271286433463 48.15855688944424</ows:LowerCorner>
+        <ows:UpperCorner>16.430300296179983 48.28228757505294</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:STRUKBAUWERKEOGD</Name>
+      <Title>Stadtstruktureller Plan Markantes Bauwerk</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_ARCH_STRUKBAUWERK_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.26877554566381 48.13762271453217</ows:LowerCorner>
+        <ows:UpperCorner>16.497515256067324 48.30306225614852</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:STRUKPLATZOGD</Name>
+      <Title>Stadtstruktureller Plan Platz</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_ARCH_STRUKPLATZ_F</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.243933455567213 48.137385237670635</ows:LowerCorner>
+        <ows:UpperCorner>16.52330976008696 48.310824420743906</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:STRUKGESTALTBEROGD</Name>
+      <Title>Stadtstruktureller Plan Sensibler Gestaltungsbereich</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_ARCH_STRUKGESTBEREICH_F</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.274146764027954 48.154498619454095</ows:LowerCorner>
+        <ows:UpperCorner>16.442185311752763 48.28170422148451</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:STRUKRAUMKANTEOGD</Name>
+      <Title>Stadtstruktureller Plan Stadtraumkante 1. und 2. Ordnung</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_ARCH_STRUKRAUMKANTE_L</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.265582138640895 48.1532084877644</ows:LowerCorner>
+        <ows:UpperCorner>16.432736979249263 48.24494438516567</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:STATIONENOGD</Name>
+      <Title>Stationen</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.279 48.169</ows:LowerCorner>
+        <ows:UpperCorner>16.464 48.254</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:STEHENDEGEWOGD</Name>
+      <Title>Stehende Gewässer</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.202 48.116</ows:LowerCorner>
+        <ows:UpperCorner>16.615 48.313</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:PLANUNGBIMHALTOGD</Name>
+      <Title>Straßenbahnplanung - Haltestellen</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.381 48.176</ows:LowerCorner>
+        <ows:UpperCorner>16.497 48.251</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:PLANUNGBIMOGD</Name>
+      <Title>Straßenbahnplanung - Linien</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.38 48.176</ows:LowerCorner>
+        <ows:UpperCorner>16.507 48.258</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:ASFINAGSTRASSEOGD</Name>
+      <Title>Straßengraph ASFINAG Wien - Autobahn, Schnellstraße</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>GIP_ASFINAG_EDGE_L</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.130177450305396 47.973391148577186</ows:LowerCorner>
+        <ows:UpperCorner>16.53408586781255 48.24337511733843</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:ASFINAGSPEEDOGD</Name>
+      <Title>Straßengraph ASFINAG Wien - Geschwindigkeitsbeschränkung</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>GIP_ASFINAG_SPEEDEINB_L</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.061905357322132 48.09203190466371</ows:LowerCorner>
+        <ows:UpperCorner>16.62663924155181 48.32653660251932</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:ASFINAGKNOTENOGD</Name>
+      <Title>Straßengraph ASFINAG Wien - Knoten</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>GIP_ASFINAG_NODE_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.130177450305396 47.973391148577186</ows:LowerCorner>
+        <ows:UpperCorner>16.53408586781255 48.24337511733843</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:STRASSENGRAPHOGD</Name>
+      <Title>Straßengraph Wien - Gemeindestraße, Hauptstraße A,B</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>GIP_M21_EDGE_L</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.187126095694495 48.12085119610959</ows:LowerCorner>
+        <ows:UpperCorner>16.550423077349187 48.32140285371226</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:STRASSENSPEEDOGD</Name>
+      <Title>Straßengraph Wien - Geschwindigkeitsbeschränkung</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>GIP_M46_SPEEDEINB_L</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.187132808653857 48.12085123981247</ows:LowerCorner>
+        <ows:UpperCorner>16.550389799653164 48.31909768216043</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:STRASSENKNOTENOGD</Name>
+      <Title>Straßengraph Wien - Knoten</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>GIP_M21_NODE_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.187126095694495 48.12085119610959</ows:LowerCorner>
+        <ows:UpperCorner>16.550423077349187 48.32140285371226</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:STRKONSTRUKTPOGD</Name>
+      <Title>Straßenkonstruktionspunkt</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_STR_ADMIN_SISKONSTR_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.201179957457743 48.12395154350264</ows:LowerCorner>
+        <ows:UpperCorner>16.54697020928194 48.318833837049176</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:AMTOGD</Name>
+      <Title>Städtisches Amt</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_INFRA_POI_AMT_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.281885965793794 48.134740977418964</ows:LowerCorner>
+        <ows:UpperCorner>16.441883433993304 48.257865435824165</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:BLINDENLEITSYSOGD</Name>
+      <Title>Taktiles Leitsystem</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_SIS_BL_F</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.20905412389691 48.054600424589594</ows:LowerCorner>
+        <ows:UpperCorner>16.504602041057723 48.35014834175042</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:TAXIOGD</Name>
+      <Title>Taxistandplätze</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.216 48.126</ows:LowerCorner>
+        <ows:UpperCorner>16.488 48.298</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:TEMPOZONEOGD</Name>
+      <Title>Tempo 30 Zonen</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.186873828798756 48.121190123241846</ows:LowerCorner>
+        <ows:UpperCorner>16.54643870186724 48.31070932447193</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:THEMENRADWEGOGD</Name>
+      <Title>Themenradwege</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.213 48.119</ows:LowerCorner>
+        <ows:UpperCorner>16.578 48.321</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:TRINKBRUNNENOGD</Name>
+      <Title>Trinkbrunnen</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.244 48.137</ows:LowerCorner>
+        <ows:UpperCorner>16.533 48.309</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:V_COVID_EDGE_TYP1_L</Name>
+      <Title>Typ1: Temporäre Begegnungszone</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_COVID_EDGE_TYP1_L</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.304784308763978 48.1659318608736</ows:LowerCorner>
+        <ows:UpperCorner>16.388577767776173 48.22719788535467</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:V_COVID_EDGE_TYP2_L</Name>
+      <Title>Typ2: Gehen auf Fahrbahn erlaubt</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_COVID_EDGE_TYP2_L</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.258013924295515 48.13179669751613</ows:LowerCorner>
+        <ows:UpperCorner>16.418049643198945 48.302199721603</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:PLANUNGUBHALTOGD</Name>
+      <Title>U-Bahn Planung - Haltestellen</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_OEV_UBAHNPLAN_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.37675978283462 48.14205820783088</ows:LowerCorner>
+        <ows:UpperCorner>16.508465821160343 48.234623975825016</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:PLANUNGUBAHNOGD</Name>
+      <Title>U-Bahn Planung - Linien</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_OEV_UBAHNPLAN_L</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.370571358365773 48.14205480159635</ows:LowerCorner>
+        <ows:UpperCorner>16.51073417425595 48.23470212154476</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:UBAHNOGD</Name>
+      <Title>U-Bahnnetz Linien</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.261 48.13</ows:LowerCorner>
+        <ows:UpperCorner>16.475 48.278</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:UNIVERSITAETOGD</Name>
+      <Title>Universität</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.241 48.158</ows:LowerCorner>
+        <ows:UpperCorner>16.523 48.294</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:VOLKSHOCHSCHULEOGD</Name>
+      <Title>Volkshochschule</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.269 48.135</ows:LowerCorner>
+        <ows:UpperCorner>16.478 48.292</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WCANLAGEOGD</Name>
+      <Title>WC-Anlagen Behindertenkabine mit Euro-Key</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.228 48.13</ows:LowerCorner>
+        <ows:UpperCorner>16.509 48.298</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WLANWIENATOGD</Name>
+      <Title>WLAN - Stadt Wien Standorte</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_WLAN_WIEN_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.33561298039216 48.21002481777332</ows:LowerCorner>
+        <ows:UpperCorner>16.43161701208656 48.250056050996136</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WAHLERGEBNISNR191OGD</Name>
+      <Title>Wahlergebnis Nationalratswahl 2019</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_WAHL_ERGEBNIS_NR191_V_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.181374193250914 48.11767275055019</ows:LowerCorner>
+        <ows:UpperCorner>16.578324921874202 48.32269396124336</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WAHLLOKALOGD</Name>
+      <Title>Wahllokale</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_ABSTIMMUNGSLOKAL_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.221047647266005 48.12842580219223</ows:LowerCorner>
+        <ows:UpperCorner>16.534108287648177 48.30002666790947</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WAHLSPRBP2010OGD</Name>
+      <Title>Wahlsprengel - Bundespräsidentenwahl 2010</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_WAHLSPR_BP2010_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.18137419594235 48.11767275234319</ows:LowerCorner>
+        <ows:UpperCorner>16.578324924579594 48.32269396304251</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WAHLSPREU2009OGD</Name>
+      <Title>Wahlsprengel - Europawahl 2009</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_WAHLSPR_EU2009_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.18137419594235 48.11767275234319</ows:LowerCorner>
+        <ows:UpperCorner>16.578324924579594 48.32269396304251</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WAHLSPREU2014OGD</Name>
+      <Title>Wahlsprengel - Europawahl 2014</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_WAHLSPR_EU2014_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.181374193250907 48.11767275055019</ows:LowerCorner>
+        <ows:UpperCorner>16.578324921874202 48.32269396124336</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WAHLSPRGR2005OGD</Name>
+      <Title>Wahlsprengel - Gemeinderatswahl 2005</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_WAHLSPR_GR2005_F</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.18137419594235 48.11767275234319</ows:LowerCorner>
+        <ows:UpperCorner>16.578324924579594 48.32269396304251</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WAHLSPRGR2010OGD</Name>
+      <Title>Wahlsprengel - Gemeinderatswahl 2010</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_WAHLSPR_GR2010_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.18137419594235 48.11767275234319</ows:LowerCorner>
+        <ows:UpperCorner>16.578324924579594 48.32269396304251</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WAHLSPRGR2015OGD</Name>
+      <Title>Wahlsprengel - Gemeinderatswahl 2015</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_WAHLSPR_GR2015_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.17859777782934 48.11836633616353</ows:LowerCorner>
+        <ows:UpperCorner>16.575551974706862 48.32338764944726</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WAHLSPRNR2006OGD</Name>
+      <Title>Wahlsprengel - Nationalratswahl 2006</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_WAHLSPR_NR2006_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.18137419594235 48.11767275234319</ows:LowerCorner>
+        <ows:UpperCorner>16.578324924579594 48.32269396304251</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WAHLSPRNR2008OGD</Name>
+      <Title>Wahlsprengel - Nationalratswahl 2008</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_WAHLSPR_NR2008_F</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.18137419594235 48.11767275234319</ows:LowerCorner>
+        <ows:UpperCorner>16.578324924579594 48.32269396304251</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WAHLSPRNR2013OGD</Name>
+      <Title>Wahlsprengel - Nationalratswahl 2013</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_WAHLSPR_NR2013_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.18137419594235 48.11767275234319</ows:LowerCorner>
+        <ows:UpperCorner>16.578324924579594 48.32269396304251</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WAHLSPRVB2013OGD</Name>
+      <Title>Wahlsprengel - Volksbefragung 2013</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_WAHLSPR_VB2013_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.18137419594235 48.11767275234319</ows:LowerCorner>
+        <ows:UpperCorner>16.578324924579594 48.32269396304251</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WAHLSPRBP2016OGD</Name>
+      <Title>Wahlsprengel in Wien - Bundespräsidentenwahl 2016</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_WAHLSPR_BP2016_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.17859777782934 48.11836633616353</ows:LowerCorner>
+        <ows:UpperCorner>16.575551974706862 48.32338764944726</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WAHLSPRNR2017OGD</Name>
+      <Title>Wahlsprengel in Wien - Nationalratswahl 2017</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_WAHLSPR_NR2017_F</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.17859777782934 48.11836633616353</ows:LowerCorner>
+        <ows:UpperCorner>16.575551974706862 48.32338764944726</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WAHLSPRNR2019OGD</Name>
+      <Title>Wahlsprengel in Wien - Nationalratswahl 2019</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_WAHLSPR_NR2019_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.181374193250907 48.11767275055019</ows:LowerCorner>
+        <ows:UpperCorner>16.578324921874202 48.32269396124336</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WALDSPIELPLOGD</Name>
+      <Title>Waldspielplätze</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_WALDSPIELPLATZ_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.20235514085333 48.137173889997065</ows:LowerCorner>
+        <ows:UpperCorner>16.518263969607858 48.321057276236026</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WANDERWEGEOGD</Name>
+      <Title>Wanderwege (Stadtwanderweg Rundumadum)</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.202 48.128</ows:LowerCorner>
+        <ows:UpperCorner>16.54 48.319</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WANDERWEGLAINZOGD</Name>
+      <Title>Wanderwege Lainzer Tiergarten</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_FORST_LAINZ_WEG_L</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.183782703110147 48.15290501998946</ows:LowerCorner>
+        <ows:UpperCorner>16.25687659600593 48.20273492176975</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WANDERWEGLOBAUOGD</Name>
+      <Title>Wanderwege Lobau</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_FORST_LOBAU_WEG_L</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.466298031470895 48.15470378641411</ows:LowerCorner>
+        <ows:UpperCorner>16.546254561049654 48.201105110434376</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WASSERSCHUTZOGD</Name>
+      <Title>Wasserschutzgebiete und Wasserschongebiete</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_WW_SCHUTZ_F</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.226250394109783 48.11836410816927</ows:LowerCorner>
+        <ows:UpperCorner>16.57535739960814 48.28437309816924</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WEGWEISEROGD</Name>
+      <Title>Wegweiser ohne ASFINAG und WL</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_GRUNDBAU_WEGWEISER_L</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.22776675006529 48.13831541098293</ows:LowerCorner>
+        <ows:UpperCorner>16.48111197284766 48.29642786726189</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:ADVENTMARKTOGD</Name>
+      <Title>Weihnachts- und Silvestermärkte</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.25665080367287 48.138761287396484</ows:LowerCorner>
+        <ows:UpperCorner>16.495989762147413 48.27576065022141</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WELTKULTERBEOGD</Name>
+      <Title>Weltkulturerbe</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.292 48.17</ows:LowerCorner>
+        <ows:UpperCorner>16.387 48.228</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:AUFZUGOGD</Name>
+      <Title>Wiener Linien Aufzüge</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.261 48.13</ows:LowerCorner>
+        <ows:UpperCorner>16.475 48.278</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WLANWRLOGD</Name>
+      <Title>Wiener Linien WLAN-Standorte</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_WLAN_WL_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.331345204706196 48.175537700064645</ows:LowerCorner>
+        <ows:UpperCorner>16.41198786559593 48.25722086714382</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:MARKTFLAECHEOGD</Name>
+      <Title>Wiener Märkte (Fläche)</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.319 48.133</ows:LowerCorner>
+        <ows:UpperCorner>16.488 48.262</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:MAERKTEOGD</Name>
+      <Title>Wiener Märkte (Punkt)</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.32 48.137</ows:LowerCorner>
+        <ows:UpperCorner>16.487 48.262</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WIENERWOHNENOGD</Name>
+      <Title>Wiener Wohnen</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_WRWOHNEN_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.41706810151087 48.185412065815676</ows:LowerCorner>
+        <ows:UpperCorner>16.423708025571184 48.185600447412895</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:ENWINDPOTOGD</Name>
+      <Title>Windpotential – Zonierung nach Eignung</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_M20_WINDPOT_BEWERTUNG_F</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.178563920837448 48.1184016148979</ows:LowerCorner>
+        <ows:UpperCorner>16.575575739416305 48.323426526969044</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WOHNPFLEGEHAUSOGD</Name>
+      <Title>Wohn-Pflegehaus</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.244 48.133</ows:LowerCorner>
+        <ows:UpperCorner>16.484 48.276</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WOHNPARTNEROGD</Name>
+      <Title>Wohnpartner</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_WOHNPARTNER_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.119758200513562 48.14686829282379</ows:LowerCorner>
+        <ows:UpperCorner>16.542433107372638 48.27710816971535</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:WOHNSTRASSEOGD</Name>
+      <Title>Wohnstrasse</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.222930612247964 48.127863813869965</ows:LowerCorner>
+        <ows:UpperCorner>16.476845619351323 48.295531190116044</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:ZUGANGSADROGD</Name>
+      <Title>Zugangsadressen</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_ZUGADR_P</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.184205274142084 48.12165230617293</ows:LowerCorner>
+        <ows:UpperCorner>16.57100883107965 48.31774710297486</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:ZAEHLBEZIRKOGD</Name>
+      <Title>Zählbezirksgrenzen</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.181 48.118</ows:LowerCorner>
+        <ows:UpperCorner>16.578 48.323</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:ZAEHLGEBIETOGD</Name>
+      <Title>Zählgebiet</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.181 48.118</ows:LowerCorner>
+        <ows:UpperCorner>16.578 48.323</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:BASEMAPVERDOGD</Name>
+      <Title>basemap.at Verdichtungsgebiete</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_VERDICHTUNG_GEBIET_F</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>9.4 46.3</ows:LowerCorner>
+        <ows:UpperCorner>17.3 49.1</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:MOBPROBLEMSTOFFOGD</Name>
+      <Title>mobile Problemstoffsammelstelle</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.242 48.128</ows:LowerCorner>
+        <ows:UpperCorner>16.485 48.291</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:PROSAMOBILOEFFZEITOGD</Name>
+      <Title>mobile Problemstoffsammelstelle Öffnungszeiten</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.129815429197244 48.10829262240523</ows:LowerCorner>
+        <ows:UpperCorner>16.534433616525693 48.333306143159454</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:BAUSTELLENLINOGD</Name>
+      <Title>verkehrswirksame Baustellen Linien</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_BSTP90_L</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.2920337938947 48.14695854157688</ows:LowerCorner>
+        <ows:UpperCorner>16.437519574934107 48.297506606003424</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:BAUSTELLENPKTOGD</Name>
+      <Title>verkehrswirksame Baustellen Punkte</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_BSTP90_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.312183130072242 48.15092031477869</ows:LowerCorner>
+        <ows:UpperCorner>16.428585367866848 48.223668209250235</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:OEFFGRUENFLOGD</Name>
+      <Title>Öffentlich zugängliche Grünflächen - Flächen</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>features</ows:Keyword>
+        <ows:Keyword>V_OGD_GRUENRM_OEFF_F</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.170123877595945 48.11374267792316</ows:LowerCorner>
+        <ows:UpperCorner>16.601852640201436 48.32433130291515</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:OEFFGRUENLINGOGD</Name>
+      <Title>Öffentlich zugängliche Grünflächen - Linien</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_GRUENRM_ZUGIP_L</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.187108381776262 48.11939140198413</ows:LowerCorner>
+        <ows:UpperCorner>16.5543634031125 48.3224239010913</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:OEFFGRUENPKTGOGD</Name>
+      <Title>Öffentlich zugängliche Grünflächen - Zugangspunkte</Title>
+      <Abstract />
+      <ows:Keywords>
+        <ows:Keyword>V_OGD_GRUENRM_ZUGANG_P</ows:Keyword>
+        <ows:Keyword>features</ows:Keyword>
+      </ows:Keywords>
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.130177450305396 47.973391148577186</ows:LowerCorner>
+        <ows:UpperCorner>16.53408586781255 48.24337511733843</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:OEFFHALTESTOGD</Name>
+      <Title>Öffentlicher Verkehr - Haltestellen</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.195957167993463 48.1233797046667</ows:LowerCorner>
+        <ows:UpperCorner>16.541874420740157 48.312053349122536</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:OEFFLINIENOGD</Name>
+      <Title>Öffentlicher Verkehr - Linien</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.13 48.108</ows:LowerCorner>
+        <ows:UpperCorner>16.534 48.333</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType xmlns:ogdwien="http://www.wien.gv.at/ogdwien">
+      <Name>ogdwien:OEKOLENTFLOGD</Name>
+      <Title>Ökologische Entwicklungsflächen</Title>
+      <Abstract />
+      <DefaultSRS>http://www.opengis.net/gml/srs/epsg.xml#31256</DefaultSRS>
+      <ows:WGS84BoundingBox>
+        <ows:LowerCorner>16.29 48.19</ows:LowerCorner>
+        <ows:UpperCorner>16.406 48.233</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+  </FeatureTypeList>
+  <ogc:Filter_Capabilities>
+    <ogc:Spatial_Capabilities>
+      <ogc:GeometryOperands>
+        <ogc:GeometryOperand>gml:Envelope</ogc:GeometryOperand>
+        <ogc:GeometryOperand>gml:Point</ogc:GeometryOperand>
+        <ogc:GeometryOperand>gml:LineString</ogc:GeometryOperand>
+        <ogc:GeometryOperand>gml:Polygon</ogc:GeometryOperand>
+      </ogc:GeometryOperands>
+      <ogc:SpatialOperators>
+        <ogc:SpatialOperator name="Disjoint" />
+        <ogc:SpatialOperator name="Equals" />
+        <ogc:SpatialOperator name="DWithin" />
+        <ogc:SpatialOperator name="Beyond" />
+        <ogc:SpatialOperator name="Intersects" />
+        <ogc:SpatialOperator name="Touches" />
+        <ogc:SpatialOperator name="Crosses" />
+        <ogc:SpatialOperator name="Within" />
+        <ogc:SpatialOperator name="Contains" />
+        <ogc:SpatialOperator name="Overlaps" />
+        <ogc:SpatialOperator name="BBOX" />
+      </ogc:SpatialOperators>
+    </ogc:Spatial_Capabilities>
+    <ogc:Scalar_Capabilities>
+      <ogc:LogicalOperators />
+      <ogc:ComparisonOperators>
+        <ogc:ComparisonOperator>LessThan</ogc:ComparisonOperator>
+        <ogc:ComparisonOperator>GreaterThan</ogc:ComparisonOperator>
+        <ogc:ComparisonOperator>LessThanEqualTo</ogc:ComparisonOperator>
+        <ogc:ComparisonOperator>GreaterThanEqualTo</ogc:ComparisonOperator>
+        <ogc:ComparisonOperator>EqualTo</ogc:ComparisonOperator>
+        <ogc:ComparisonOperator>NotEqualTo</ogc:ComparisonOperator>
+        <ogc:ComparisonOperator>Like</ogc:ComparisonOperator>
+        <ogc:ComparisonOperator>Between</ogc:ComparisonOperator>
+        <ogc:ComparisonOperator>NullCheck</ogc:ComparisonOperator>
+      </ogc:ComparisonOperators>
+      <ogc:ArithmeticOperators>
+        <ogc:SimpleArithmetic />
+        <ogc:Functions>
+          <ogc:FunctionNames>
+            <ogc:FunctionName nArgs="1">abs</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">abs_2</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">abs_3</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">abs_4</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">acos</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">AddCoverages</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-1">Affine</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-2">Aggregate</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">Area</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">area2</ogc:FunctionName>
+            <ogc:FunctionName nArgs="3">AreaGrid</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">asin</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">atan</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">atan2</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-1">BandMerge</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-2">BandSelect</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-6">BarnesSurface</ogc:FunctionName>
+            <ogc:FunctionName nArgs="3">between</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">boundary</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">boundaryDimension</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">Bounds</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">buffer</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-2">BufferFeatureCollection</ogc:FunctionName>
+            <ogc:FunctionName nArgs="3">bufferWithSegments</ogc:FunctionName>
+            <ogc:FunctionName nArgs="7">Categorize</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">ceil</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">centroid</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">classify</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-2">Clip</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">CollectGeometries</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">Collection_Average</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">Collection_Bounds</ogc:FunctionName>
+            <ogc:FunctionName nArgs="0">Collection_Count</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">Collection_Max</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">Collection_Median</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">Collection_Min</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">Collection_Nearest</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">Collection_Sum</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">Collection_Unique</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-2">Concatenate</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">contains</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-1">Contour</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">convert</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">convexHull</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">cos</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">Count</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">CropCoverage</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">crosses</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">dateFormat</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">dateParse</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">difference</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">dimension</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">disjoint</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">disjoint3D</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">distance</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">distance3D</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">double2bool</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">endAngle</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">endPoint</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">env</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">envelope</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">EqualInterval</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">equalsExact</ogc:FunctionName>
+            <ogc:FunctionName nArgs="3">equalsExactTolerance</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">equalTo</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">exp</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">exteriorRing</ogc:FunctionName>
+            <ogc:FunctionName nArgs="3">Feature</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">floor</ogc:FunctionName>
+            <ogc:FunctionName nArgs="0">geometry</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">geometryType</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">geomFromWKT</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">geomLength</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">getGeometryN</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">getX</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">getY</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">getz</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">greaterEqualThan</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">greaterThan</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-3">Grid</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-5">Heatmap</ogc:FunctionName>
+            <ogc:FunctionName nArgs="0">id</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">IEEEremainder</ogc:FunctionName>
+            <ogc:FunctionName nArgs="3">if_then_else</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-2">in</ogc:FunctionName>
+            <ogc:FunctionName nArgs="11">in10</ogc:FunctionName>
+            <ogc:FunctionName nArgs="3">in2</ogc:FunctionName>
+            <ogc:FunctionName nArgs="4">in3</ogc:FunctionName>
+            <ogc:FunctionName nArgs="5">in4</ogc:FunctionName>
+            <ogc:FunctionName nArgs="6">in5</ogc:FunctionName>
+            <ogc:FunctionName nArgs="7">in6</ogc:FunctionName>
+            <ogc:FunctionName nArgs="8">in7</ogc:FunctionName>
+            <ogc:FunctionName nArgs="9">in8</ogc:FunctionName>
+            <ogc:FunctionName nArgs="10">in9</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">InclusionFeatureCollection</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">int2bbool</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">int2ddouble</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">interiorPoint</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">interiorRingN</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-5">Interpolate</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">intersection</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-2">IntersectionFeatureCollection</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">intersects</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">intersects3D</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">isClosed</ogc:FunctionName>
+            <ogc:FunctionName nArgs="0">isCoverage</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">isEmpty</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">isInstanceOf</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">isLike</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">isNull</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">isometric</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">isRing</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">isSimple</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">isValid</ogc:FunctionName>
+            <ogc:FunctionName nArgs="3">isWithinDistance</ogc:FunctionName>
+            <ogc:FunctionName nArgs="3">isWithinDistance3D</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">Jenks</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">length</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">lessEqualThan</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">lessThan</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-1">list</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">log</ogc:FunctionName>
+            <ogc:FunctionName nArgs="4">LRSGeocode</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-4">LRSMeasure</ogc:FunctionName>
+            <ogc:FunctionName nArgs="5">LRSSegment</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">max</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">max_2</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">max_3</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">max_4</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">min</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">min_2</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">min_3</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">min_4</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">mincircle</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">minimumdiameter</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">minrectangle</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">modulo</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">MultiplyCoverages</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-2">Nearest</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">not</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">notEqualTo</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">numberFormat</ogc:FunctionName>
+            <ogc:FunctionName nArgs="5">numberFormat2</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">numGeometries</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">numInteriorRing</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">numPoints</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">octagonalenvelope</ogc:FunctionName>
+            <ogc:FunctionName nArgs="3">offset</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">overlaps</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-1">parameter</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">parseBoolean</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">parseDouble</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">parseInt</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">parseLong</ogc:FunctionName>
+            <ogc:FunctionName nArgs="0">pi</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-1">PointBuffers</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">pointN</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-6">PointStacker</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-1">PolygonExtraction</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">pow</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">property</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">PropertyExists</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">Quantile</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-1">Query</ogc:FunctionName>
+            <ogc:FunctionName nArgs="0">random</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-1">RangeLookup</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-1">RasterAsPointCollection</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-2">RasterZonalStatistics</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-6">RasterZonalStatistics2</ogc:FunctionName>
+            <ogc:FunctionName nArgs="5">Recode</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-2">RectangularClip</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">relate</ogc:FunctionName>
+            <ogc:FunctionName nArgs="3">relatePattern</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-1">Reproject</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-3">rescaleToPixels</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">rint</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">round</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">round_2</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">roundDouble</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-5">ScaleCoverage</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-2">sdo_nn</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">setCRS</ogc:FunctionName>
+            <ogc:FunctionName nArgs="3">Simplify</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">sin</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-2">Snap</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">sqrt</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">StandardDeviation</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">startAngle</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">startPoint</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">strCapitalize</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">strConcat</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">strEndsWith</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">strEqualsIgnoreCase</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">strIndexOf</ogc:FunctionName>
+            <ogc:FunctionName nArgs="4">stringTemplate</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">strLastIndexOf</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">strLength</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">strMatches</ogc:FunctionName>
+            <ogc:FunctionName nArgs="3">strPosition</ogc:FunctionName>
+            <ogc:FunctionName nArgs="4">strReplace</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">strStartsWith</ogc:FunctionName>
+            <ogc:FunctionName nArgs="3">strSubstring</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">strSubstringStart</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">strToLowerCase</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">strToUpperCase</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">strTrim</ogc:FunctionName>
+            <ogc:FunctionName nArgs="3">strTrim2</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">StyleCoverage</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">symDifference</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">tan</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">toDegrees</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">toRadians</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">touches</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">toWKT</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">Transform</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">union</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">UnionFeatureCollection</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">Unique</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">UniqueInterval</ogc:FunctionName>
+            <ogc:FunctionName nArgs="-4">VectorToRaster</ogc:FunctionName>
+            <ogc:FunctionName nArgs="3">VectorZonalStatistics</ogc:FunctionName>
+            <ogc:FunctionName nArgs="1">vertices</ogc:FunctionName>
+            <ogc:FunctionName nArgs="2">within</ogc:FunctionName>
+          </ogc:FunctionNames>
+        </ogc:Functions>
+      </ogc:ArithmeticOperators>
+    </ogc:Scalar_Capabilities>
+    <ogc:Id_Capabilities>
+      <ogc:FID />
+      <ogc:EID />
+    </ogc:Id_Capabilities>
+  </ogc:Filter_Capabilities>
+</wfs:WFS_Capabilities>

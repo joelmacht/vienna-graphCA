@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<wfs:FeatureCollection xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ogc="http://www.opengis.net/ogc" xmlns:wfs="http://www.opengis.net/wfs" xmlns:ows="http://www.opengis.net/ows" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ogdwien="http://www.wien.gv.at/ogdwien" xmlns:gml="http://www.opengis.net/gml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" numberOfFeatures="2" timeStamp="2020-06-15T14:28:01.917Z" xsi:schemaLocation="http://www.wien.gv.at/ogdwien http://data.wien.gv.at/daten/geo/wfs?service=WFS&amp;version=1.1.0&amp;request=DescribeFeatureType&amp;typeName=ogdwien%3AFMZKVERKEHR1OGD http://www.opengis.net/wfs http://schemas.opengis.net/wfs/1.1.0/wfs.xsd">
+	<gml:featureMembers>
+		<ogdwien:FMZKVERKEHR1OGD gml:id="FMZKVERKEHR1OGD.fid-fab7d58_172b85dc934_-2c1c">
+			<ogdwien:FMZK_ID>4006301062</ogdwien:FMZK_ID>
+			<ogdwien:F_KLASSE>16</ogdwien:F_KLASSE>
+			<ogdwien:LAYER>Brückenpfeiler</ogdwien:LAYER>
+			<ogdwien:KLASSE_SUB>0</ogdwien:KLASSE_SUB>
+			<ogdwien:SHAPE>
+				<gml:Polygon srsName="http://www.opengis.net/gml/srs/epsg.xml#31256">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>4358.69900000002 342173.694 4358.63399999961 342174.205 4358.56500000041 342174.199999999 4358.51999999955 342174.186000001 4358.48000000045 342174.164999999 4358.4450000003 342174.137 4358.412999999711 342174.103 4358.389000000431 342174.065 4358.37200000044 342174.023 4358.3629999999 342173.989 4358.359000000171 342173.944 4358.36600000039 342173.887 4358.375 342173.854 4358.389000000431 342173.823000001 4358.412999999711 342173.785 4358.4450000003 342173.751 4358.48000000045 342173.72299999907 4358.51999999955 342173.702 4358.56500000041 342173.688999999 4358.62100000028 342173.682 4358.66700000037 342173.686000001 4358.69900000002 342173.694</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ogdwien:SHAPE>
+			<ogdwien:SE_SDO_ROWID>16336732</ogdwien:SE_SDO_ROWID>
+		</ogdwien:FMZKVERKEHR1OGD>
+		<ogdwien:FMZKVERKEHR1OGD gml:id="FMZKVERKEHR1OGD.fid-fab7d58_172b85dc934_-2c1b">
+			<ogdwien:FMZK_ID>4004990923</ogdwien:FMZK_ID>
+			<ogdwien:F_KLASSE>16</ogdwien:F_KLASSE>
+			<ogdwien:LAYER>Brückenpfeiler</ogdwien:LAYER>
+			<ogdwien:KLASSE_SUB>0</ogdwien:KLASSE_SUB>
+			<ogdwien:SHAPE>
+				<gml:Polygon srsName="http://www.opengis.net/gml/srs/epsg.xml#31256">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:posList>4360.38999999966 342138.796 4360.34499999974 342138.800000001 4360.287999999711 342138.794 4360.24500000011 342138.779999999 4360.20399999991 342138.76 4360.55200000014 342138.377 4360.57699999958 342138.416999999 4360.591000000021 342138.448000001 4360.59999999963 342138.481000001 4360.60699999984 342138.53800000093 4360.60300000012 342138.583000001 4360.59399999958 342138.617000001 4360.57699999958 342138.659 4360.55300000031 342138.697000001 4360.53000000026 342138.72299999907 4360.50399999972 342138.745999999 4360.466000000021 342138.77 4360.42399999965 342138.787000001 4360.38999999966 342138.796</gml:posList>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</ogdwien:SHAPE>
+			<ogdwien:SE_SDO_ROWID>16336733</ogdwien:SE_SDO_ROWID>
+		</ogdwien:FMZKVERKEHR1OGD>
+	</gml:featureMembers>
+</wfs:FeatureCollection>
