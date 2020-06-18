@@ -3,22 +3,11 @@ import requests
 import xml.etree.ElementTree as ET
 import xml.dom.minidom
 
+import common
+
+
 service_url = "https://data.wien.gv.at/daten/geo"
 get_base = service_url + "?service=WFS&version=1.1.0"
-namespaces = {
-	"ogdwien" : "http://www.wien.gv.at/ogdwien"
-}
-featureTypes = [
-	"REALNUT2001OGD",
-	"REALNUT2003OGD",
-	"REALNUT2005OGD",
-	"REALNUT200708OGD",
-	"REALNUT2009OGD",
-	"REALNUT2012OGD",
-	"REALNUT2016GOGD",
-	"REALNUT2014OGD",
-	"REALNUT2018OGD",
-]
 
 def operation_string(base, request, featureType):
 	base += "&"
@@ -45,13 +34,12 @@ count = 2
 ns = "ogdwien"
 
 # featureType = "FMZKVERKEHR2OGD"
-for featureType in featureTypes:
+for featureType in common.featureTypes:
 	r = get_request(get_feature_string(get_base, ns+":"+featureType))
-	print(r.text)
 	with open("data/original/"+featureType+".xml", "w") as f:
 		xml_data = xml.dom.minidom.parseString(r.text)
 		pretty_xml_str = xml_data.toprettyxml()
 		f.write(pretty_xml_str)
 	root = ET.fromstring(r.text)
 	_, tag = re.split(r"\{*\}", root[0][0].tag)
-	features = root[0].findall(ns+":"+tag, namespaces)
+	features = root[0].findall(ns+":"+tag, common.namespaces)
