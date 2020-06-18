@@ -43,13 +43,15 @@ def get_request(get_string):
 
 count = 2
 ns = "ogdwien"
-featureType = "GENFLWIDMUNGOGD"
 
-r = get_request(get_feature_string(get_base, ns+":"+featureType))
-with open("data/original/"+featureType+".xml", "w") as f:
-	xml_data = xml.dom.minidom.parseString(r.text)
-	pretty_xml_str = xml_data.toprettyxml()
-	f.write(pretty_xml_str)
-root = ET.fromstring(r.text)
-_, tag = re.split(r"\{*\}", root[0][0].tag)
-features = root[0].findall(ns+":"+tag, namespaces)
+# featureType = "FMZKVERKEHR2OGD"
+for featureType in featureTypes:
+	r = get_request(get_feature_string(get_base, ns+":"+featureType))
+	print(r.text)
+	with open("data/original/"+featureType+".xml", "w") as f:
+		xml_data = xml.dom.minidom.parseString(r.text)
+		pretty_xml_str = xml_data.toprettyxml()
+		f.write(pretty_xml_str)
+	root = ET.fromstring(r.text)
+	_, tag = re.split(r"\{*\}", root[0][0].tag)
+	features = root[0].findall(ns+":"+tag, namespaces)
