@@ -1,4 +1,0 @@
-.xml filter=lfs diff=lfs merge=lfs -text
-*.gfs filter=lfs diff=lfs merge=lfs -text
-*.tif filter=lfs diff=lfs merge=lfs -text
-.json filter=lfs diff=lfs merge=lfs -text
