@@ -23,5 +23,6 @@ attributes = {
 values = {
 	"NUTZUNG_CODE" : [str(i) for i in range(1, 33)],
 	"NUTZUNG_LEVEL1" : ["Baulandnutzung", "Verkehr", "Grünlandnutzung"],
+	"NUTZUNG_LEVEL3" : ["Bahnhöfe und Bahnanlagen",],
 	"BEZ" : ["0"+str(i) for i in range(1, 10)]+[str(i) for i in range(10, 24)],
 }
