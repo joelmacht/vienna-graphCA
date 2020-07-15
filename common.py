@@ -1,3 +1,6 @@
+import geopandas
+
+
 namespaces = {
 	"ogdwien" : "http://www.wien.gv.at/ogdwien"
 }
@@ -26,3 +29,11 @@ values = {
 	"NUTZUNG_LEVEL3" : ["Bahnhöfe und Bahnanlagen",],
 	"BEZ" : ["0"+str(i) for i in range(1, 10)]+[str(i) for i in range(10, 24)],
 }
+
+initial_data = geopandas.read_file(
+	"data/original/geojson/{}.geojson".format(featureTypes[0]), 
+	driver="GeoJSON"
+)
+
+is_road = initial_data["NUTZUNG_CODE"].apply(lambda x: x in [19, 20, 22])
+road_network = initial_data[is_road]
