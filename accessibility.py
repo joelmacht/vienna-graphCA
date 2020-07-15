@@ -1,33 +1,27 @@
 import geopandas
 import matplotlib.pyplot as plt
 import pandas
+import time
 
 import common
 
 
-def distance_to_road(parcel, road_network):
-	projected_road = road_network["geometry"].to_crs(epsg=3395)
-	projected_parcel = parcel["geometry"].to_crs(epsg=3395)
-	distances = projected_road.distance(projected_parcel.item())
+epsg = common.projection_epsg
+road_network = common.road_network.to_crs(epsg=epsg).geometry
+
+def distance_to_road(parcel_geometry):
+	distances = road_network.distance(parcel_geometry)
 	return distances.min()
 
-def get_accessibility(parcels, road_network):
-	accessibility = []
-	for i in range(parcels.shape[0]):
-		parcel = parcels.iloc[[i]]
-		distance = distance_to_road(parcel, road_network)
-		accessibility.append(distance)
-	return accessibility
+def get_accessibility(parcels):
+	return parcels.to_crs(epsg=epsg).geometry.apply(distance_to_road)
 
 if __name__ == "__main__":
 	mask = (common.initial_data["BEZ"]=="19") & (common.initial_data["NUTZUNG_LEVEL1"]!="Verkehr")
 	parcels_subset = common.initial_data[mask].copy()
+	print(parcels_subset.shape)
 	
-	parcel = parcels_subset.iloc[[0]]
-	distance = distance_to_road(parcel, common.road_network)
-	print(distance)
-
-	parcels_subset["accessibility"] = get_accessibility(parcels_subset, common.road_network)
+	parcels_subset["accessibility"] = get_accessibility(parcels_subset)
 
 	fig = plt.figure(figsize=(6, 6))
 	ax = fig.add_subplot()
@@ -35,6 +29,5 @@ if __name__ == "__main__":
 
 	common.road_network.plot(ax=ax, color="black")
 	parcels_subset.plot(ax=ax, column="accessibility", cmap="autumn_r")
-	# parcels_subset.plot(ax=ax, color="red")
 
 	plt.savefig("images/debugging/distance.pdf")
