@@ -26,6 +26,16 @@ def plot_map(data, column, values, colormap_name, output_folder, file_name):
 	axis.legend()
 	figure.savefig("{}/{}.pdf".format(output_folder, file_name))
 
+def plot_accessibility(parcels, output_folder, file_name):
+	figure = plt.figure()
+	axes = figure.add_subplot()
+	axes.axis("off")
+
+	common.road_network.plot(ax=axes, color="black")
+	parcels.boundary.plot(ax=axes, column="accessibility", cmap="autumn_r")
+
+	figure.savefig("{}/{}.pdf".format(output_folder, file_name))
+
 # with open("data/processed/usage_mapping.json", "r") as f:
 # 	usage_mapping = json.load(f)
 # usage_mapping = {int(key): value for key, value in usage_mapping.items()}
