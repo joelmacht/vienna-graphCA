@@ -11,11 +11,11 @@ def distance_to_road(parcel, road_network):
 	distances = projected_road.distance(projected_parcel.item())
 	return distances.min()
 
-def get_accessibility(parcels):
+def get_accessibility(parcels, road_network):
 	accessibility = []
 	for i in range(parcels.shape[0]):
 		parcel = parcels.iloc[[i]]
-		distance = distance_to_road(parcel, common.road_network)
+		distance = distance_to_road(parcel, road_network)
 		accessibility.append(distance)
 	return accessibility
 
@@ -27,7 +27,7 @@ if __name__ == "__main__":
 	distance = distance_to_road(parcel, common.road_network)
 	print(distance)
 
-	parcels_subset["accessibility"] = get_accessibility(parcels_subset)
+	parcels_subset["accessibility"] = get_accessibility(parcels_subset, common.road_network)
 
 	fig = plt.figure(figsize=(6, 6))
 	ax = fig.add_subplot()
