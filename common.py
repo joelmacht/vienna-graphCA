@@ -32,6 +32,8 @@ values = {
 	"BEZ" : ["0"+str(i) for i in range(1, 10)]+[str(i) for i in range(10, 24)],
 }
 
+projection_epsg = 3395
+
 initial_data = geopandas.read_file(
 	"data/original/geojson/{}.geojson".format(featureTypes[0]), 
 	driver="GeoJSON"
