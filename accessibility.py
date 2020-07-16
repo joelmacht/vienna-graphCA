@@ -10,6 +10,8 @@ epsg = common.projection_epsg
 road_network = common.road_network.to_crs(epsg=epsg).geometry
 
 def distance_to_road(parcel_geometry):
+	print(i)
+	i += 1
 	distances = road_network.distance(parcel_geometry)
 	return distances.min()
 
@@ -21,6 +23,7 @@ if __name__ == "__main__":
 	parcels_subset = common.initial_data[mask].copy()
 	print(parcels_subset.shape)
 	
+	i=0
 	parcels_subset["accessibility"] = get_accessibility(parcels_subset)
 
 	fig = plt.figure(figsize=(6, 6))
