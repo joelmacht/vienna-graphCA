@@ -1,6 +1,7 @@
 import geopandas
 import matplotlib.patches as patches
 import matplotlib.pyplot as plt
+import shapely.wkt
 
 
 namespaces = {
@@ -39,25 +40,28 @@ initial_data = geopandas.read_file(
 	driver="GeoJSON"
 )
 
-is_road = initial_data["NUTZUNG_CODE"].apply(lambda x: x in [19, 20, 22])
-road_network = initial_data[is_road]
+# is_road = initial_data["NUTZUNG_CODE"].apply(lambda x: x in [19, 20, 22])
+with open("data/processed/road_network_union.txt", "r") as f:
+	wkt = f.read()
+road_network = shapely.wkt.loads(wkt)
 
 if __name__ == "__main__":
-	fig = plt.figure(figsize=(6, 6))
-	ax = fig.add_subplot()
-	plt.axis("off")
+	def debug(gdf):
+		fig = plt.figure(figsize=(6, 6))
+		ax = fig.add_subplot()
+		plt.axis("off")
 
-	road_network.plot(ax=ax, color="black")
+		gdf.plot(ax=ax, color="black")
 
-	x1, y1, x2, y2 = initial_data[initial_data["BEZ"]=="19"].total_bounds
-	rectangle = patches.Rectangle(
-		(x1, y1), 
-		x2-x1, 
-		y2-y1,
-		linewidth=1,
-		edgecolor="red",
-		facecolor="none"
-	)
-	ax.add_patch(rectangle)
+		x1, y1, x2, y2 = initial_data[initial_data["BEZ"]=="19"].total_bounds
+		rectangle = patches.Rectangle(
+			(x1, y1), 
+			x2-x1, 
+			y2-y1,
+			linewidth=1,
+			edgecolor="red",
+			facecolor="none"
+		)
+		ax.add_patch(rectangle)
 
-	plt.savefig("images/debugging/road_network.pdf")
+		plt.savefig("images/debugging/road_network.pdf")
