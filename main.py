@@ -1,19 +1,31 @@
 import geopandas
 
+import accessibility
 import common
 import visualize
 
 
-file_name = common.featureTypes[0]
-initial_data = geopandas.read_file(
-	"data/processed/{}.processed.geojson".format(file_name), 
+# visualize.plot_map(
+# 	common.initial_data,
+# 	"state",
+# 	[0, 1, 2],
+# 	"RdBu",
+# 	"maps",
+# 	"initial_data"
+# )
+
+mask = common.initial_data["NUTZUNG_LEVEL1"]!="Verkehr"
+non_traffic_data = common.initial_data[mask].copy()
+non_traffic_data["accessibility"] = accessibility.get_accessibility(
+	non_traffic_data,
+	common.road_network
+)
+non_traffic_data.to_file(
+	"data/maps/accessibility.geojson",
 	driver="GeoJSON"
 )
-visualize.plot_map(
-	initial_data,
-	"state",
-	[0, 1, 2],
-	"RdBu",
+visualize.plot_accessibility(
+	non_traffic_data,
 	"maps",
-	"initial_data"
+	"accessibility"
 )
