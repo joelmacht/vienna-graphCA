@@ -1,5 +1,6 @@
 import geopandas
 import matplotlib.pyplot as plt
+import numpy
 import pandas
 import time
 
@@ -7,14 +8,18 @@ import common
 
 
 epsg = common.projection_epsg
-road_network = common.road_network.to_crs(epsg=epsg).geometry
 
-def distance_to_road(parcel_geometry):
-	distances = road_network.distance(parcel_geometry)
-	return distances.min()
+def distance_to_road(polygon):
+	return polygon.distance(common.road_network)
 
 def get_accessibility(parcels):
-	return parcels.to_crs(epsg=epsg).geometry.apply(distance_to_road)
+	polygons = parcels.to_crs(epsg=epsg).geometry.values.to_numpy()
+	accessibility = numpy.zeros(polygons.size)
+	i = 0
+	for i in range(polygons.size):
+		print(i)
+		accessibility[i] = distance_to_road(polygons[i])
+	return accessibility
 
 if __name__ == "__main__":
 	mask = (common.initial_data["BEZ"]=="19") & (common.initial_data["NUTZUNG_LEVEL1"]!="Verkehr")
