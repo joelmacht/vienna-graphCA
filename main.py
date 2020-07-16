@@ -14,13 +14,13 @@ import visualize
 # 	"initial_data"
 # )
 
-mask = common.initial_data["NUTZUNG_LEVEL1"]!="Verkehr"
-non_traffic_data = common.initial_data[mask].copy()
-non_traffic_data["accessibility"] = accessibility.get_accessibility(
-	non_traffic_data,
-	common.road_network
-)
-non_traffic_data.to_file(
+# mask = common.initial_data["NUTZUNG_LEVEL1"]!="Verkehr"
+# non_traffic_data = common.initial_data[mask].copy()
+# non_traffic_data["accessibility"] = accessibility.get_accessibility(
+# 	non_traffic_data,
+# 	common.road_network
+# )
+non_traffic_data = geopandas.read_file(
 	"data/maps/accessibility.geojson",
 	driver="GeoJSON"
 )

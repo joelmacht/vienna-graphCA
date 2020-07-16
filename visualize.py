@@ -31,8 +31,8 @@ def plot_accessibility(parcels, output_folder, file_name):
 	axes = figure.add_subplot()
 	axes.axis("off")
 
-	common.road_network.plot(ax=axes, color="black")
-	parcels.boundary.plot(ax=axes, column="accessibility", cmap="autumn_r")
+	common.initial_data[common.is_road].plot(ax=axes, color="black")
+	parcels.plot(ax=axes, column="accessibility", cmap="autumn_r")
 
 	figure.savefig("{}/{}.pdf".format(output_folder, file_name))
 

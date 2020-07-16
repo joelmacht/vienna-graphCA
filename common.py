@@ -40,12 +40,25 @@ initial_data = geopandas.read_file(
 	driver="GeoJSON"
 )
 
-# is_road = initial_data["NUTZUNG_CODE"].apply(lambda x: x in [19, 20, 22])
+is_road = initial_data["NUTZUNG_CODE"].apply(lambda x: x in [19, 20, 22])
 with open("data/processed/road_network_union.txt", "r") as f:
 	wkt = f.read()
 road_network = shapely.wkt.loads(wkt)
 
 if __name__ == "__main__":
+	def plot_road_union():
+		from matplotlib import pyplot
+		from shapely.geometry import MultiPolygon
+		from descartes.patch import PolygonPatch
+
+		fig = pyplot.figure(figsize=(6, 6))
+		ax = fig.add_subplot()
+
+		for polygon in road_network:
+			ax.plot(*polygon.exterior.xy)
+
+		fig.savefig("images/debugging/road_network_union.pdf")
+
 	def debug(gdf):
 		fig = plt.figure(figsize=(6, 6))
 		ax = fig.add_subplot()
