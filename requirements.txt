@@ -15,7 +15,7 @@ geopy==2.0.0
 idna==2.9
 joblib==0.16.0
 kiwisolver==1.2.0
-lxml==4.5.1
+lxml==4.6.3
 mapclassify==2.3.0
 matplotlib==3.2.2
 more-itertools==8.4.0
